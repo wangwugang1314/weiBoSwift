@@ -19,6 +19,8 @@ class YBTabBarController: UITabBarController {
         prepareUI()
         // 设置渲染颜色
         tabBar.tintColor = UIColor.orangeColor()
+        // 设置背景颜色
+        tabBar.backgroundColor = UIColor(patternImage: UIImage(named: "tabbar_background")!)
     }
     
     /// 
@@ -68,8 +70,8 @@ class YBTabBarController: UITabBarController {
         // 创建导航控制器
         let navC = YBBaseNavigationController(rootViewController: controller)
         
-        if let tit = title {
-            navC.tabBarItem.title = tit
+        if title?.characters.count > 0 {
+            navC.tabBarItem.title = title
             navC.tabBarItem.setTitleTextAttributes([NSUnderlineStyleAttributeName : 1], forState: UIControlState.Normal)
             // 设置图片
             navC.tabBarItem.image = UIImage(named: imageName!)

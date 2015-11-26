@@ -13,6 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // 设置全局属性
+        setGlobalProperty()
+        
         // 创建window
         window = UIWindow(frame: UIScreen.bounds())
         // 设置跟视图
@@ -50,6 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - 设置全局属性
+    private func setGlobalProperty(){
+        // 设置UIBarButtonItem
+        let barButtonItem = UIBarButtonItem.appearance()
+        barButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orangeColor()], forState: UIControlState.Normal)
+    }
 
 }
 
