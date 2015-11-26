@@ -1,10 +1,7 @@
-//
-//  AppDelegate.swift
-//  weiBoSwift
-//
-//  Created by MAC on 15/11/25.
-//  Copyright © 2015年 MAC. All rights reserved.
-//
+/// 属性
+/// 构造函数
+/// 准备UI
+/// 懒加载
 
 import UIKit
 
@@ -15,7 +12,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // 创建window
+        window = UIWindow(frame: UIScreen.bounds())
+        // 设置跟视图
+        window!.rootViewController = YBTabBarController()
+        // 显示
+        window?.makeKeyAndVisible()
+        
+        
+        NSThread.sleepForTimeInterval(1)
+        
         return true
     }
 
