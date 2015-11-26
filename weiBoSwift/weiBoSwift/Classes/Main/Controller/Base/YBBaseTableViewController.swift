@@ -10,4 +10,11 @@ import UIKit
 
 class YBBaseTableViewController: UITableViewController {
 
+    ///
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 设置颜色
+        view.backgroundColor = UIColor.randomColor()
+    }
 }

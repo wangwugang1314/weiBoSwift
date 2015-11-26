@@ -1,7 +1,7 @@
-/// 属性
-/// 构造函数
-/// 准备UI
-/// 懒加载
+// MARK: - 属性
+// MARK: - 构造函数
+// MARK: - 准备UI
+// MARK: - 懒加载
 
 import UIKit
 
@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = YBTabBarController()
         // 显示
         window?.makeKeyAndVisible()
+        // 设置window背景
+        window?.backgroundColor = UIColor.whiteColor()
         
         
         NSThread.sleepForTimeInterval(1)

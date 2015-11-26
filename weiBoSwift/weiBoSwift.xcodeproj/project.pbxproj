@@ -17,6 +17,8 @@
 		04D2484C1C06A5E8007AF5E0 /* YBMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2484B1C06A5E8007AF5E0 /* YBMessageController.swift */; };
 		04D2484E1C06A60D007AF5E0 /* YBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2484D1C06A60D007AF5E0 /* YBDiscoverController.swift */; };
 		04D248501C06A626007AF5E0 /* YBMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2484F1C06A626007AF5E0 /* YBMeController.swift */; };
+		04D248C21C06CA86007AF5E0 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D248C11C06CA86007AF5E0 /* UIButton+Extension.swift */; };
+		04D248C51C06CC97007AF5E0 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D248C41C06CC97007AF5E0 /* UIView+AutoLayout.swift */; };
 		04F378571C05FB9000718FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F378561C05FB9000718FB4 /* AppDelegate.swift */; };
 		04F3785E1C05FB9100718FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F3785D1C05FB9100718FB4 /* Assets.xcassets */; };
 		04F3786C1C05FB9100718FB4 /* weiBoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3786B1C05FB9100718FB4 /* weiBoSwiftTests.swift */; };
@@ -52,6 +54,8 @@
 		04D2484B1C06A5E8007AF5E0 /* YBMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBMessageController.swift; sourceTree = "<group>"; };
 		04D2484D1C06A60D007AF5E0 /* YBDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBDiscoverController.swift; sourceTree = "<group>"; };
 		04D2484F1C06A626007AF5E0 /* YBMeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBMeController.swift; sourceTree = "<group>"; };
+		04D248C11C06CA86007AF5E0 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		04D248C41C06CC97007AF5E0 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		04F378531C05FB9000718FB4 /* weiBoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weiBoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F378561C05FB9000718FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		04F3785D1C05FB9100718FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -303,6 +307,7 @@
 				04A4AC2D1C060FBE004058CC /* UIColor+Extension.swift */,
 				04A4AC2E1C060FBE004058CC /* UIScreen+Extension.swift */,
 				04A4AC2F1C060FBE004058CC /* UIView+Extension.swift */,
+				04D248C11C06CA86007AF5E0 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 		04A4AC221C060C3D004058CC /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				04D248C31C06CC97007AF5E0 /* Swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -364,6 +370,14 @@
 				04A4AC2B1C060D5E004058CC /* YBBaseNavigationController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		04D248C31C06CC97007AF5E0 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				04D248C41C06CC97007AF5E0 /* UIView+AutoLayout.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		04F3784A1C05FB9000718FB4 = {
@@ -626,9 +640,11 @@
 				04F378571C05FB9000718FB4 /* AppDelegate.swift in Sources */,
 				04A4AC2A1C060D3A004058CC /* YBBaseTableViewController.swift in Sources */,
 				04D248501C06A626007AF5E0 /* YBMeController.swift in Sources */,
+				04D248C51C06CC97007AF5E0 /* UIView+AutoLayout.swift in Sources */,
 				04A4AC301C060FBE004058CC /* UIColor+Extension.swift in Sources */,
 				04A4AC341C06104C004058CC /* YBTabBarController.swift in Sources */,
 				04D2484C1C06A5E8007AF5E0 /* YBMessageController.swift in Sources */,
+				04D248C21C06CA86007AF5E0 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
