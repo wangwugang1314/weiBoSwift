@@ -25,9 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 设置window背景
         window?.backgroundColor = UIColor.whiteColor()
         
-        
-        NSThread.sleepForTimeInterval(1)
-        
         return true
     }
 

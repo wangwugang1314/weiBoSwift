@@ -10,4 +10,9 @@ import UIKit
 
 class YBBaseNavigationController: UINavigationController {
 
+    
+    /// 对象销毁
+    deinit {
+        print(self)
+    }
 }

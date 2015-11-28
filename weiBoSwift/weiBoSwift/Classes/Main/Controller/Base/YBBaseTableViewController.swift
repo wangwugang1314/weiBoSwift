@@ -11,33 +11,35 @@ import UIKit
 class YBBaseTableViewController: UITableViewController {
     
     // MARK: - 属性
-    private var isVisit = true
+    /// 是否已经登录
+    private var isVisit = YBUserModel.userModel()?.isLogin ?? false
     
     /// loadView
     override func loadView() {
-        isVisit ? visitView() : super.loadView()
+        isVisit ? super.loadView() : visitView()
     }
 
     /// viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if isVisit {
+        if !isVisit {
             // 设置登录按钮
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "loginButClick")
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "registerButClick")
-            
         }else{
             // 设置颜色
             view.backgroundColor = UIColor.randomColor()
         }
-        
     }
     
     // MARK: - 按钮点击
     /// 登录按钮点击
     @objc private func loginButClick(){
         print("登录按钮点击")
+        // 跳转到授权界面
+        let navC = UINavigationController(rootViewController: YBLoginViewController())
+        presentViewController(navC, animated: true, completion: nil)
     }
     
     /// 注册按钮点击
@@ -76,6 +78,11 @@ class YBBaseTableViewController: UITableViewController {
         visitView.isVisit = isHome;
         // 设置文字
         visitView.showTitleLable.text = title
+    }
+    
+    /// 对象销毁
+    deinit {
+        print(self)
     }
 }
 

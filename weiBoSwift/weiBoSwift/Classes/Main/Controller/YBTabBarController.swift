@@ -79,4 +79,9 @@ class YBTabBarController: UITabBarController {
         // 添加到tabBar控制器
         addChildViewController(navC)
     }
+    
+    /// 对象销毁
+    deinit {
+        print(self)
+    }
 }
