@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 创建window
         window = UIWindow(frame: UIScreen.bounds())
         // 设置跟视图
-        window!.rootViewController = YBTabBarController()
+//        window?.rootViewController = YBTabBarController()
+        window?.rootViewController = YBWelcomeViewController()
         // 显示
         window?.makeKeyAndVisible()
         // 设置window背景

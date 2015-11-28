@@ -12,22 +12,32 @@ extension UIView {
     
     // 宽度
     var width: CGFloat {
-        return self.frame.size.width
+        return frame.size.width
     }
     
     // 高度
     var height: CGFloat {
-        return self.frame.size.height
+        return frame.size.height
     }
     
     // Y
     var X: CGFloat {
-        return self.frame.origin.x
+        return frame.origin.x
     }
     
     // Y
     var Y: CGFloat {
-        return self.frame.origin.x
+        return frame.origin.x
+    }
+    
+    // centerX
+    var centerX: CGFloat {
+        return center.x
+    }
+    
+    // centerY
+    var centerY: CGFloat {
+        return center.y
     }
     
 }
