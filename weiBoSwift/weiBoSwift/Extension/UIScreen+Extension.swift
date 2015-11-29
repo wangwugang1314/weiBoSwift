@@ -24,4 +24,9 @@ extension UIScreen {
     class func bounds() -> CGRect {
         return UIScreen.mainScreen().bounds
     }
+    
+    // 屏幕大小
+    class func size() -> CGSize {
+        return UIScreen.mainScreen().bounds.size
+    }
 }

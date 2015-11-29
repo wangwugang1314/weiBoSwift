@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */; };
+		0455F37C1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F37B1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift */; };
 		0478A8501C08668C00513858 /* YBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A84F1C08668C00513858 /* YBLoginViewController.swift */; };
 		0478A8901C086CD500513858 /* YBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A88F1C086CD500513858 /* YBUserModel.swift */; };
 		0478A8921C086CF800513858 /* YBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A8911C086CF800513858 /* YBNetworking.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNewFeatureViewController.swift; sourceTree = "<group>"; };
+		0455F37B1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNewFeatuireCell.swift; sourceTree = "<group>"; };
 		0478A84F1C08668C00513858 /* YBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBLoginViewController.swift; sourceTree = "<group>"; };
 		0478A88F1C086CD500513858 /* YBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBUserModel.swift; sourceTree = "<group>"; };
 		0478A8911C086CF800513858 /* YBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNetworking.swift; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 			isa = PBXGroup;
 			children = (
 				04D8DA171C0A06CB0066452E /* YBWelcomeViewController.swift */,
+				0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */,
+				0455F37B1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift */,
 			);
 			path = "开始界面";
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 			files = (
 				04A4AC321C060FBE004058CC /* UIView+Extension.swift in Sources */,
 				04D2484E1C06A60D007AF5E0 /* YBDiscoverController.swift in Sources */,
+				0455F37C1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift in Sources */,
 				04D8DA181C0A06CB0066452E /* YBWelcomeViewController.swift in Sources */,
 				04D2484A1C06A5BE007AF5E0 /* YBHomeController.swift in Sources */,
 				04D248E21C07116A007AF5E0 /* YBVisitView.swift in Sources */,
@@ -697,6 +704,7 @@
 				04D248501C06A626007AF5E0 /* YBMeController.swift in Sources */,
 				0478A8921C086CF800513858 /* YBNetworking.swift in Sources */,
 				04D248C51C06CC97007AF5E0 /* UIView+AutoLayout.swift in Sources */,
+				0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */,
 				04A4AC301C060FBE004058CC /* UIColor+Extension.swift in Sources */,
 				04DF42F41C08AD3F008748B1 /* YBDefaultData.swift in Sources */,
 				04A4AC341C06104C004058CC /* YBTabBarController.swift in Sources */,
