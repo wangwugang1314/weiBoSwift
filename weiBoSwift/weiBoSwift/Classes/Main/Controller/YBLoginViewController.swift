@@ -71,10 +71,10 @@ class YBLoginViewController: UIViewController {
         return webView
     }()
     
-    /// 对象销毁
-    deinit {
-        print("登录页面销毁")
-    }
+    // 对象销毁
+//    deinit {
+//        print("\(self) - 销毁")
+//    }
 }
 
 // MARK: - 扩展
@@ -114,6 +114,8 @@ extension YBLoginViewController: UIWebViewDelegate {
         // 清除登录页面
         SVProgressHUD.dismiss()
     }
+    
+    
 }
 
 

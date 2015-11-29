@@ -81,9 +81,9 @@ class YBBaseTableViewController: UITableViewController {
     }
     
     /// 对象销毁
-    deinit {
-        print(self)
-    }
+//    deinit {
+//        print(self)
+//    }
 }
 
 // MARK: - 扩展

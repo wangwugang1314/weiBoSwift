@@ -69,6 +69,11 @@ class YBNewFeatureViewController: UICollectionViewController {
     }
     
     // MARK: - 懒加载
+    
+    // 对象销毁
+    deinit{
+        print("\(self) - 销毁")
+    }
 }
 
 

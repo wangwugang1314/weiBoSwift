@@ -42,7 +42,7 @@ class YBWelcomeViewController: UIViewController {
     // MARK: - 动画
     private func iconAnimation(){
         constent?.constant = -view.height * 0.8
-        UIView.animateWithDuration(2.2, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+        UIView.animateWithDuration(2.2, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
                 self.view.layoutIfNeeded()
             }) { (_) -> Void in
                 UIView.animateWithDuration(1, animations: { () -> Void in
@@ -74,6 +74,11 @@ class YBWelcomeViewController: UIViewController {
         lable.alpha = 0
         return lable
     }()
+    
+    // 对象销毁
+    deinit{
+        print("\(self) - 销毁")
+    }
 }
 
 

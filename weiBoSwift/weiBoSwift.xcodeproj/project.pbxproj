@@ -11,6 +11,7 @@
 		0455F37C1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F37B1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift */; };
 		0455F3831C0AC1220062FA12 /* YBIsNewVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3821C0AC1220062FA12 /* YBIsNewVersion.swift */; };
 		0455F3851C0ACBA80062FA12 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3841C0ACBA80062FA12 /* UIView+Extension.swift */; };
+		0455F38A1C0AF24C0062FA12 /* YBHomeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */; };
 		0478A8501C08668C00513858 /* YBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A84F1C08668C00513858 /* YBLoginViewController.swift */; };
 		0478A8901C086CD500513858 /* YBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A88F1C086CD500513858 /* YBUserModel.swift */; };
 		0478A8921C086CF800513858 /* YBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A8911C086CF800513858 /* YBNetworking.swift */; };
@@ -57,6 +58,7 @@
 		0455F37B1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNewFeatuireCell.swift; sourceTree = "<group>"; };
 		0455F3821C0AC1220062FA12 /* YBIsNewVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBIsNewVersion.swift; sourceTree = "<group>"; };
 		0455F3841C0ACBA80062FA12 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeNavTitleView.swift; sourceTree = "<group>"; };
 		0478A84F1C08668C00513858 /* YBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBLoginViewController.swift; sourceTree = "<group>"; };
 		0478A88F1C086CD500513858 /* YBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBUserModel.swift; sourceTree = "<group>"; };
 		0478A8911C086CF800513858 /* YBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNetworking.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		04A4AC101C060C3D004058CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */,
 				04A4AC301C060FBE004058CC /* UIColor+Extension.swift in Sources */,
 				04DF42F41C08AD3F008748B1 /* YBDefaultData.swift in Sources */,
+				0455F38A1C0AF24C0062FA12 /* YBHomeNavTitleView.swift in Sources */,
 				04A4AC341C06104C004058CC /* YBTabBarController.swift in Sources */,
 				04D2484C1C06A5E8007AF5E0 /* YBMessageController.swift in Sources */,
 				04D248C21C06CA86007AF5E0 /* UIButton+Extension.swift in Sources */,

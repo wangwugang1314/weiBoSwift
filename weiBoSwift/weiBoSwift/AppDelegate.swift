@@ -71,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 设置UIBarButtonItem
         let barButtonItem = UIBarButtonItem.appearance()
         barButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orangeColor()], forState: UIControlState.Normal)
+        // 设置barBut颜色
+        barButtonItem.tintColor = UIColor.orangeColor()
     }
 
 }

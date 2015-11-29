@@ -80,8 +80,8 @@ class YBTabBarController: UITabBarController {
         addChildViewController(navC)
     }
     
-    /// 对象销毁
-    deinit {
-        print(self)
-    }
+    // 对象销毁
+//    deinit{
+//        print("\(self) - 销毁")
+//    }
 }
