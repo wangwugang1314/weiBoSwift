@@ -18,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 创建window
         window = UIWindow(frame: UIScreen.bounds())
-        // 设置跟视图
-//        window?.rootViewController = YBTabBarController()
-//        window?.rootViewController = YBWelcomeViewController()
-        window?.rootViewController = YBNewFeatureViewController()
+        // 界面跳转
+        viewSwitch()
         // 显示
         window?.makeKeyAndVisible()
         // 设置window背景
@@ -50,6 +48,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: - 界面跳转
+    private func viewSwitch(){
+        // 判断是否登录
+        if YBUserModel.userModel().isLogin { // 登录
+            // 判断是否是新版本
+            if YBIsNewVersion.isNewVersion() { // 是新版本
+                window?.rootViewController = YBNewFeatureViewController()
+            }else{ // 不是新版本
+                window?.rootViewController = YBWelcomeViewController()
+            }
+        }else{ // 没有登录
+            // 跳到主控制器
+            window?.rootViewController = YBTabBarController()
+        }
     }
 
     // MARK: - 设置全局属性

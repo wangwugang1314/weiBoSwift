@@ -10,34 +10,48 @@ import UIKit
 
 extension UIView {
     
-    // 宽度
+    /// 宽度
     var width: CGFloat {
         return frame.size.width
     }
     
-    // 高度
+    /// 高度
     var height: CGFloat {
         return frame.size.height
     }
     
-    // Y
+    /// Y
     var X: CGFloat {
         return frame.origin.x
     }
     
-    // Y
+    /// Y
     var Y: CGFloat {
         return frame.origin.x
     }
     
-    // centerX
+    /// centerX
     var centerX: CGFloat {
         return center.x
     }
     
-    // centerY
+    /// centerY
     var centerY: CGFloat {
         return center.y
     }
     
+    /// size
+    var size: CGSize {
+        return bounds.size
+    }
+    
+    /// 圆角半径
+    var cornerRadius: CGFloat {
+        get{
+            return 0.0
+        }set(newValue){
+            layer.masksToBounds = true;
+            layer.cornerRadius = newValue;
+        }
+    }
 }

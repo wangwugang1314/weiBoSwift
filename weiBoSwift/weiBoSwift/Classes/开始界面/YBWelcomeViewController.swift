@@ -49,6 +49,7 @@ class YBWelcomeViewController: UIViewController {
                     self.userName.alpha = 1
                     }, completion: { (_) -> Void in
                         // 完成控制器跳转
+                        UIApplication.sharedApplication().keyWindow?.rootViewController = YBTabBarController()
                 })
         }
     }
@@ -60,8 +61,7 @@ class YBWelcomeViewController: UIViewController {
     /// 头像
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView(image: UIImage(named: "avatar_default_big"))
-        iconView.layer.masksToBounds = true
-        iconView.layer.cornerRadius = 42.5
+        iconView.cornerRadius = 42.5
         return iconView
     }()
     

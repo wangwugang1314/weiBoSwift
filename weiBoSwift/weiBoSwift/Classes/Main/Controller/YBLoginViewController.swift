@@ -94,7 +94,10 @@ extension YBLoginViewController: UIWebViewDelegate {
                     // 判断登录是否成功
                     if isSuccess { // 成功
                         SVProgressHUD.showSuccessWithStatus("登录成功")
-                        
+                        // 欢迎界面
+                        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                            UIApplication.sharedApplication().keyWindow?.rootViewController = YBWelcomeViewController()
+                        })
                     } else { // 失败
                         SVProgressHUD.showSuccessWithStatus("登录失败")
                     }

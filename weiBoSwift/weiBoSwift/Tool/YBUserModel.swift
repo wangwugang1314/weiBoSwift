@@ -58,7 +58,7 @@ class YBUserModel: NSObject, NSCoding {
     }
     
     /// 获取数据
-    class func userModel() -> YBUserModel? {
+    class func userModel() -> YBUserModel {
         if YBUserModel.sharedInstance == nil {
             // 重缓存加载数据
             YBUserModel.sharedInstance = NSKeyedUnarchiver.unarchiveObjectWithFile(YBUserModel.path) as? YBUserModel
@@ -66,9 +66,9 @@ class YBUserModel: NSObject, NSCoding {
         // 判断时间是否超时
         if NSDate().compare(sharedInstance?.date ?? NSDate()) == NSComparisonResult.OrderedDescending {
             // 表示超时(没有登录)
-            YBUserModel.sharedInstance?.isLogin = false
+            YBUserModel.sharedInstance!.isLogin = false
         }
-        return YBUserModel.sharedInstance
+        return YBUserModel.sharedInstance!
     }
     
     /// 保存数据

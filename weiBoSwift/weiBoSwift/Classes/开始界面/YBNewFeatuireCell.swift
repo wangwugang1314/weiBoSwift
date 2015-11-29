@@ -57,6 +57,7 @@ class YBNewFeatuireCell: UICollectionViewCell {
     // MARK: - 按钮点击事件
     @objc private func startButClick(){
         print("开始按钮点击")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = YBTabBarController()
     }
     
     // MARK: - 懒加载

@@ -12,7 +12,7 @@ class YBBaseTableViewController: UITableViewController {
     
     // MARK: - 属性
     /// 是否已经登录
-    private var isVisit = YBUserModel.userModel()?.isLogin ?? false
+    private var isVisit = YBUserModel.userModel().isLogin ?? false
     
     /// loadView
     override func loadView() {
