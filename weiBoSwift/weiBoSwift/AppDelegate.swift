@@ -47,13 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Called when the application isYBUserModel.sharedInstance = YBUserModel() about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
     // MARK: - 界面跳转
     private func viewSwitch(){
         // 判断是否登录
-        if YBUserModel.userModel().isLogin { // 登录
+        if YBUserModel.userModel()?.isLogin ?? false { // 登录
             // 判断是否是新版本
             if YBIsNewVersion.isNewVersion() { // 是新版本
                 window?.rootViewController = YBNewFeatureViewController()

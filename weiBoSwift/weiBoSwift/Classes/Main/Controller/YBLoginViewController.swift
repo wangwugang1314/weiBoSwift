@@ -90,7 +90,7 @@ extension YBLoginViewController: UIWebViewDelegate {
                 // 获取code
                 let code = (p as NSString).componentsSeparatedByString("=").last!
                 // 加载数据
-                YBUserModel.loadUserData(code, finish: { (isSuccess) -> () in
+                YBUserModel.loadUserLoginData(code, finish: { (isSuccess) -> () in
                     // 判断登录是否成功
                     if isSuccess { // 成功
                         SVProgressHUD.showSuccessWithStatus("登录成功")
@@ -99,10 +99,9 @@ extension YBLoginViewController: UIWebViewDelegate {
                             UIApplication.sharedApplication().keyWindow?.rootViewController = YBWelcomeViewController()
                         })
                     } else { // 失败
-                        SVProgressHUD.showSuccessWithStatus("登录失败")
+                        SVProgressHUD.showErrorWithStatus("登录失败")
                     }
                 })
-                
                 return false
             }
         }
@@ -114,8 +113,6 @@ extension YBLoginViewController: UIWebViewDelegate {
         // 清除登录页面
         SVProgressHUD.dismiss()
     }
-    
-    
 }
 
 

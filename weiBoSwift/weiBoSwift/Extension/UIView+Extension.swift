@@ -22,12 +22,20 @@ extension UIView {
     
     /// Y
     var X: CGFloat {
-        return frame.origin.x
+        set(newValue){
+            frame.origin.x = newValue
+        }get{
+            return frame.origin.x
+        }
     }
     
     /// Y
     var Y: CGFloat {
-        return frame.origin.x
+        set(newValue){
+            frame.origin.y = newValue
+        }get{
+            return frame.origin.y
+        }
     }
     
     /// centerX

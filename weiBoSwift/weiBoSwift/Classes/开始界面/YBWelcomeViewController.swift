@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class YBWelcomeViewController: UIViewController {
 
@@ -42,10 +43,10 @@ class YBWelcomeViewController: UIViewController {
     // MARK: - 动画
     private func iconAnimation(){
         constent?.constant = -view.height * 0.8
-        UIView.animateWithDuration(2.2, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+        UIView.animateWithDuration(0.1, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
                 self.view.layoutIfNeeded()
             }) { (_) -> Void in
-                UIView.animateWithDuration(1, animations: { () -> Void in
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
                     self.userName.alpha = 1
                     }, completion: { (_) -> Void in
                         // 完成控制器跳转
@@ -60,7 +61,9 @@ class YBWelcomeViewController: UIViewController {
     
     /// 头像
     private lazy var iconView: UIImageView = {
-        let iconView = UIImageView(image: UIImage(named: "avatar_default_big"))
+        let iconView = UIImageView()
+        iconView.sd_setImageWithURL(NSURL(string: YBUserModel.userModel()?.avatar_large ?? ""),
+            placeholderImage: UIImage(named: "avatar_default_big"))
         iconView.cornerRadius = 42.5
         return iconView
     }()
@@ -68,7 +71,7 @@ class YBWelcomeViewController: UIViewController {
     /// 名称
     private lazy var userName: UILabel = {
         let lable = UILabel()
-        lable.text = "焚膏继晷"
+        lable.text = YBUserModel.userModel()?.screen_name
         lable.textColor = UIColor.orangeColor()
         lable.font = UIFont.systemFontOfSize(20)
         lable.alpha = 0

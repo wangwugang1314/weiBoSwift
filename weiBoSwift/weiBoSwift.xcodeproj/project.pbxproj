@@ -12,14 +12,23 @@
 		0455F3831C0AC1220062FA12 /* YBIsNewVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3821C0AC1220062FA12 /* YBIsNewVersion.swift */; };
 		0455F3851C0ACBA80062FA12 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3841C0ACBA80062FA12 /* UIView+Extension.swift */; };
 		0455F38A1C0AF24C0062FA12 /* YBHomeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */; };
+		0455F3EB1C0B53430062FA12 /* YBNavScanCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3E81C0B53430062FA12 /* YBNavScanCodeController.m */; };
+		0455F3EC1C0B53430062FA12 /* YBScanCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3EA1C0B53430062FA12 /* YBScanCode.m */; };
 		0478A8501C08668C00513858 /* YBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A84F1C08668C00513858 /* YBLoginViewController.swift */; };
 		0478A8901C086CD500513858 /* YBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A88F1C086CD500513858 /* YBUserModel.swift */; };
 		0478A8921C086CF800513858 /* YBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A8911C086CF800513858 /* YBNetworking.swift */; };
+		047E57941C0C86FA00C89F22 /* YBHomePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E57931C0C86FA00C89F22 /* YBHomePopViewController.swift */; };
+		047E57971C0C8C5700C89F22 /* YBHomePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E57961C0C8C5700C89F22 /* YBHomePresentationController.swift */; };
 		04A4AC2A1C060D3A004058CC /* YBBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AC291C060D3A004058CC /* YBBaseTableViewController.swift */; };
 		04A4AC2C1C060D5E004058CC /* YBBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AC2B1C060D5E004058CC /* YBBaseNavigationController.swift */; };
 		04A4AC301C060FBE004058CC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AC2D1C060FBE004058CC /* UIColor+Extension.swift */; };
 		04A4AC311C060FBE004058CC /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AC2E1C060FBE004058CC /* UIScreen+Extension.swift */; };
 		04A4AC341C06104C004058CC /* YBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4AC331C06104C004058CC /* YBTabBarController.swift */; };
+		04B4CBBD1C0D4065008E9701 /* YBHomePopTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4CBBC1C0D4065008E9701 /* YBHomePopTableView.swift */; };
+		04B4CBBF1C0D7C24008E9701 /* YBWeiBoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4CBBE1C0D7C24008E9701 /* YBWeiBoModel.swift */; };
+		04B4CBC11C0D9201008E9701 /* YBWeIBoUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4CBC01C0D9201008E9701 /* YBWeIBoUserModel.swift */; };
+		04B4CBC51C0D9370008E9701 /* YBHomeCellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4CBC41C0D9370008E9701 /* YBHomeCellTopView.swift */; };
+		04B4CBC81C0D94C1008E9701 /* YBHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4CBC71C0D94C1008E9701 /* YBHomeTableViewCell.swift */; };
 		04D2484A1C06A5BE007AF5E0 /* YBHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D248491C06A5BE007AF5E0 /* YBHomeController.swift */; };
 		04D2484C1C06A5E8007AF5E0 /* YBMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2484B1C06A5E8007AF5E0 /* YBMessageController.swift */; };
 		04D2484E1C06A60D007AF5E0 /* YBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2484D1C06A60D007AF5E0 /* YBDiscoverController.swift */; };
@@ -59,14 +68,26 @@
 		0455F3821C0AC1220062FA12 /* YBIsNewVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBIsNewVersion.swift; sourceTree = "<group>"; };
 		0455F3841C0ACBA80062FA12 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeNavTitleView.swift; sourceTree = "<group>"; };
+		0455F3E71C0B53430062FA12 /* YBNavScanCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBNavScanCodeController.h; sourceTree = "<group>"; };
+		0455F3E81C0B53430062FA12 /* YBNavScanCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBNavScanCodeController.m; sourceTree = "<group>"; };
+		0455F3E91C0B53430062FA12 /* YBScanCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBScanCode.h; sourceTree = "<group>"; };
+		0455F3EA1C0B53430062FA12 /* YBScanCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBScanCode.m; sourceTree = "<group>"; };
+		0455F3ED1C0B537E0062FA12 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
 		0478A84F1C08668C00513858 /* YBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBLoginViewController.swift; sourceTree = "<group>"; };
 		0478A88F1C086CD500513858 /* YBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBUserModel.swift; sourceTree = "<group>"; };
 		0478A8911C086CF800513858 /* YBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNetworking.swift; sourceTree = "<group>"; };
+		047E57931C0C86FA00C89F22 /* YBHomePopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePopViewController.swift; sourceTree = "<group>"; };
+		047E57961C0C8C5700C89F22 /* YBHomePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePresentationController.swift; sourceTree = "<group>"; };
 		04A4AC291C060D3A004058CC /* YBBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBBaseTableViewController.swift; sourceTree = "<group>"; };
 		04A4AC2B1C060D5E004058CC /* YBBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBBaseNavigationController.swift; sourceTree = "<group>"; };
 		04A4AC2D1C060FBE004058CC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		04A4AC2E1C060FBE004058CC /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		04A4AC331C06104C004058CC /* YBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBTabBarController.swift; sourceTree = "<group>"; };
+		04B4CBBC1C0D4065008E9701 /* YBHomePopTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePopTableView.swift; sourceTree = "<group>"; };
+		04B4CBBE1C0D7C24008E9701 /* YBWeiBoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBWeiBoModel.swift; sourceTree = "<group>"; };
+		04B4CBC01C0D9201008E9701 /* YBWeIBoUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBWeIBoUserModel.swift; sourceTree = "<group>"; };
+		04B4CBC41C0D9370008E9701 /* YBHomeCellTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeCellTopView.swift; sourceTree = "<group>"; };
+		04B4CBC71C0D94C1008E9701 /* YBHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeTableViewCell.swift; sourceTree = "<group>"; };
 		04D248491C06A5BE007AF5E0 /* YBHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeController.swift; sourceTree = "<group>"; };
 		04D2484B1C06A5E8007AF5E0 /* YBMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBMessageController.swift; sourceTree = "<group>"; };
 		04D2484D1C06A60D007AF5E0 /* YBDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBDiscoverController.swift; sourceTree = "<group>"; };
@@ -125,6 +146,17 @@
 			name = "新版本";
 			sourceTree = "<group>";
 		};
+		0455F3EE1C0B53C10062FA12 /* 二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				0455F3E71C0B53430062FA12 /* YBNavScanCodeController.h */,
+				0455F3E81C0B53430062FA12 /* YBNavScanCodeController.m */,
+				0455F3E91C0B53430062FA12 /* YBScanCode.h */,
+				0455F3EA1C0B53430062FA12 /* YBScanCode.m */,
+			);
+			name = "二维码";
+			sourceTree = "<group>";
+		};
 		0478A84E1C08666E00513858 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +170,20 @@
 			children = (
 				0478A88F1C086CD500513858 /* YBUserModel.swift */,
 				0478A8911C086CF800513858 /* YBNetworking.swift */,
+				04B4CBBE1C0D7C24008E9701 /* YBWeiBoModel.swift */,
+				04B4CBC01C0D9201008E9701 /* YBWeIBoUserModel.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		047E57951C0C87C100C89F22 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				047E57931C0C86FA00C89F22 /* YBHomePopViewController.swift */,
+				047E57961C0C8C5700C89F22 /* YBHomePresentationController.swift */,
+				04B4CBBC1C0D4065008E9701 /* YBHomePopTableView.swift */,
+			);
+			name = PopView;
 			sourceTree = "<group>";
 		};
 		04A4AC081C060C3D004058CC /* Classes */ = {
@@ -202,6 +246,8 @@
 		04A4AC0E1C060C3D004058CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				047E57951C0C87C100C89F22 /* PopView */,
+				0455F3EE1C0B53C10062FA12 /* 二维码 */,
 				04D248491C06A5BE007AF5E0 /* YBHomeController.swift */,
 			);
 			path = Controller;
@@ -217,7 +263,8 @@
 		04A4AC101C060C3D004058CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */,
+				04B4CBC61C0D94A1008E9701 /* Cell */,
+				04B4CBC21C0D932D008E9701 /* PopView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +420,7 @@
 			children = (
 				0455F3811C0AC1090062FA12 /* 新版本 */,
 				04F378561C05FB9000718FB4 /* AppDelegate.swift */,
+				0455F3ED1C0B537E0062FA12 /* Bridging-Header.h */,
 				04F3785D1C05FB9100718FB4 /* Assets.xcassets */,
 				04F378621C05FB9100718FB4 /* Info.plist */,
 			);
@@ -421,6 +469,31 @@
 				04A4AC2B1C060D5E004058CC /* YBBaseNavigationController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		04B4CBC21C0D932D008E9701 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */,
+			);
+			name = PopView;
+			sourceTree = "<group>";
+		};
+		04B4CBC31C0D934A008E9701 /* CellTop */ = {
+			isa = PBXGroup;
+			children = (
+				04B4CBC41C0D9370008E9701 /* YBHomeCellTopView.swift */,
+			);
+			name = CellTop;
+			sourceTree = "<group>";
+		};
+		04B4CBC61C0D94A1008E9701 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04B4CBC31C0D934A008E9701 /* CellTop */,
+				04B4CBC71C0D94C1008E9701 /* YBHomeTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		04D248C31C06CC97007AF5E0 /* 约束 */ = {
@@ -703,13 +776,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0455F3EB1C0B53430062FA12 /* YBNavScanCodeController.m in Sources */,
 				0455F3851C0ACBA80062FA12 /* UIView+Extension.swift in Sources */,
 				04D2484E1C06A60D007AF5E0 /* YBDiscoverController.swift in Sources */,
 				0455F37C1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift in Sources */,
 				04D8DA181C0A06CB0066452E /* YBWelcomeViewController.swift in Sources */,
 				04D2484A1C06A5BE007AF5E0 /* YBHomeController.swift in Sources */,
+				04B4CBC11C0D9201008E9701 /* YBWeIBoUserModel.swift in Sources */,
 				04D248E21C07116A007AF5E0 /* YBVisitView.swift in Sources */,
 				04A4AC2C1C060D5E004058CC /* YBBaseNavigationController.swift in Sources */,
+				0455F3EC1C0B53430062FA12 /* YBScanCode.m in Sources */,
 				0478A8501C08668C00513858 /* YBLoginViewController.swift in Sources */,
 				04A4AC311C060FBE004058CC /* UIScreen+Extension.swift in Sources */,
 				0478A8901C086CD500513858 /* YBUserModel.swift in Sources */,
@@ -717,15 +793,21 @@
 				04A4AC2A1C060D3A004058CC /* YBBaseTableViewController.swift in Sources */,
 				04D248501C06A626007AF5E0 /* YBMeController.swift in Sources */,
 				0478A8921C086CF800513858 /* YBNetworking.swift in Sources */,
+				047E57941C0C86FA00C89F22 /* YBHomePopViewController.swift in Sources */,
+				04B4CBC51C0D9370008E9701 /* YBHomeCellTopView.swift in Sources */,
+				04B4CBBF1C0D7C24008E9701 /* YBWeiBoModel.swift in Sources */,
 				0455F3831C0AC1220062FA12 /* YBIsNewVersion.swift in Sources */,
 				04D248C51C06CC97007AF5E0 /* UIView+AutoLayout.swift in Sources */,
 				0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */,
 				04A4AC301C060FBE004058CC /* UIColor+Extension.swift in Sources */,
+				04B4CBBD1C0D4065008E9701 /* YBHomePopTableView.swift in Sources */,
 				04DF42F41C08AD3F008748B1 /* YBDefaultData.swift in Sources */,
 				0455F38A1C0AF24C0062FA12 /* YBHomeNavTitleView.swift in Sources */,
+				04B4CBC81C0D94C1008E9701 /* YBHomeTableViewCell.swift in Sources */,
 				04A4AC341C06104C004058CC /* YBTabBarController.swift in Sources */,
 				04D2484C1C06A5E8007AF5E0 /* YBMessageController.swift in Sources */,
 				04D248C21C06CA86007AF5E0 /* UIButton+Extension.swift in Sources */,
+				047E57971C0C8C5700C89F22 /* YBHomePresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,11 +930,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = weiBoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xx.weiBoSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = weiBoSwift.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "weiBoSwift/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -862,11 +947,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = weiBoSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xx.weiBoSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = weiBoSwift.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "weiBoSwift/Bridging-Header.h";
 			};
 			name = Release;
 		};

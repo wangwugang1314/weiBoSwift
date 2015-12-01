@@ -24,9 +24,19 @@ class YBNetworking: NSObject {
     /// 回调地址
     static let redirect_uri = "https://www.baidu.com/"
     
-    // MARK: - 加载网络数据
-    /// 加载用户信息 https://api.weibo.com/oauth2/access_token
-    func loadUserData(code: String, finish: YBNetworkingFinish) {
+    // MARK: - 加载微博数据
+    func loadWeiBoData(finish: (result: [[String: AnyObject]]?, error: NSError?) -> ()) {
+        let path = "/2/statuses/home_timeline.json"
+        let dic = ["access_token": YBUserModel.userModel()!.access_token!];
+        // 加载数据
+        GET(path, parameters: dic) { (result, error) -> () in
+            finish(result: result?["statuses"] as? [[String: AnyObject]], error: error)
+        }
+    }
+    
+    // MARK: - 加载用户信息
+    /// 加载用户登录信息 https://api.weibo.com/oauth2/access_token
+    func loadUserLoginData(code: String, finish: YBNetworkingFinish) {
         let path = "/oauth2/access_token"
         let dic = ["client_id": YBNetworking.client_id,
                "client_secret": YBNetworking.client_secret,
@@ -35,6 +45,17 @@ class YBNetworking: NSObject {
                 "redirect_uri": YBNetworking.redirect_uri]
         // 加载网络数据
         POST(path, parameters: dic) { (result, error) -> () in
+            finish(result: result, error: error)
+        }
+    }
+    
+    /// 加载用户信息 https://api.weibo.com/2/users/show.json
+    func loadUserData(finish: YBNetworkingFinish){
+        let path = "/2/users/show.json"
+        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "uid": YBUserModel.userModel()!.uid!]
+        
+        // 加载网络数据
+        GET(path, parameters: dic as [String: AnyObject]) { (result, error) -> () in
             finish(result: result, error: error)
         }
     }

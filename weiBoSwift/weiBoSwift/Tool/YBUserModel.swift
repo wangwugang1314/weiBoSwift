@@ -2,6 +2,7 @@
 //App Secret：283af988db3ec9bbb6fbb8cd41ec9d7c
 
 import UIKit
+import SVProgressHUD
 
 class YBUserModel: NSObject, NSCoding {
     
@@ -27,6 +28,11 @@ class YBUserModel: NSObject, NSCoding {
     var uid: String?
     /// 是否登录
     var isLogin = false
+    /// 用户昵称
+    var screen_name: String?
+    /// 头像地址
+    var avatar_large: String?
+    
     
     // MARK: - 构造方法
     init(dic: [String: AnyObject]) {
@@ -38,18 +44,18 @@ class YBUserModel: NSObject, NSCoding {
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
     
     /// 加载网络数据获取登录信息
-    class func loadUserData(code: String,finish: (Bool) -> ()) {
+    class func loadUserLoginData(code: String,finish: (Bool) -> ()) {
         // 加载网络数据
-        YBNetworking.sharedInstance.loadUserData(code) { (result, error) -> () in
+        YBNetworking.sharedInstance.loadUserLoginData(code) { (result, error) -> () in
             // 判断是否成功
             if result != nil && error == nil {
                 // 创建对象
                 YBUserModel.sharedInstance = YBUserModel(dic: result!)
                 // 设置已经登录
                 YBUserModel.sharedInstance?.isLogin = true
-                // 保存数据
-                YBUserModel.sharedInstance!.saveData()
-                // 返回加载成功
+                // 加载用户数据
+                loadUserData()
+                // 完成调用闭包
                 finish(true)
             }else{
                 finish(false)
@@ -57,8 +63,24 @@ class YBUserModel: NSObject, NSCoding {
         }
     }
     
+    /// 加载用户数据
+    private class func loadUserData() {
+        /// 加载用户数据
+        YBNetworking.sharedInstance.loadUserData { (result, error) -> () in
+            // 判断数据加载是都失败
+            if result == nil && error != nil {
+                // 数据加载失败
+                SVProgressHUD.showErrorWithStatus("用户数据加载失败")
+                return
+            }
+            YBUserModel.sharedInstance?.setValuesForKeysWithDictionary(result!)
+            // 保存数据
+            YBUserModel.sharedInstance!.saveData()
+        }
+    }
+    
     /// 获取数据
-    class func userModel() -> YBUserModel {
+    class func userModel() -> YBUserModel? {
         if YBUserModel.sharedInstance == nil {
             // 重缓存加载数据
             YBUserModel.sharedInstance = NSKeyedUnarchiver.unarchiveObjectWithFile(YBUserModel.path) as? YBUserModel
@@ -68,7 +90,7 @@ class YBUserModel: NSObject, NSCoding {
             // 表示超时(没有登录)
             YBUserModel.sharedInstance!.isLogin = false
         }
-        return YBUserModel.sharedInstance!
+        return YBUserModel.sharedInstance
     }
     
     /// 保存数据
@@ -89,6 +111,10 @@ class YBUserModel: NSObject, NSCoding {
         aCoder.encodeObject(uid, forKey: "uid")
         // 是否登录信息
         aCoder.encodeBool(isLogin, forKey: "isLogin")
+        // 用户昵称
+        aCoder.encodeObject(screen_name, forKey: "screen_name")
+        // 头像地址
+        aCoder.encodeObject(avatar_large, forKey: "avatar_large")
     }
     
     /// 解档
@@ -98,6 +124,10 @@ class YBUserModel: NSObject, NSCoding {
         uid = aDecoder.decodeObjectForKey("uid") as? String
         // 是否登录信息
         isLogin = aDecoder.decodeBoolForKey("isLogin")
+        // 用户昵称
+        screen_name = aDecoder.decodeObjectForKey("screen_name") as? String
+        // 头像地址
+        avatar_large = aDecoder.decodeObjectForKey("avatar_large") as? String
     }
 }
 
