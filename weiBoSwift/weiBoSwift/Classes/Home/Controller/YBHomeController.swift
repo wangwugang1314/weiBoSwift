@@ -36,7 +36,7 @@ class YBHomeController: YBBaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "homePopDismissedControllerNotification", name: YBHomePopDismissedControllerNotification,
             object: nil)
         
-        tableView.rowHeight = 100;
+        tableView.rowHeight = 500;
     }
     
     // MARK: - 加载微薄数据
