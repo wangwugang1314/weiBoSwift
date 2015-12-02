@@ -11,7 +11,12 @@ import UIKit
 class YBHomeTableViewCell: UITableViewCell {
 
     // MARK: - 属性
-    var data: YBWeiBoModel?
+    var data: YBWeiBoModel? {
+        didSet{
+            // 顶部
+            topView.data = data
+        }
+    }
     
     // MARK: - 构造函数
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -28,7 +33,7 @@ class YBHomeTableViewCell: UITableViewCell {
     private func prepareUI(){
         // 顶部试图
         addSubview(topView)
-        topView.ff_AlignInner(type: ff_AlignType.TopCenter, referView: contentView, size: CGSize(width: UIScreen.width(), height: 60))
+        topView.ff_AlignInner(type: ff_AlignType.TopLeft, referView: contentView, size: CGSize(width: UIScreen.width(), height: 60))
     }
     
     // MARK: - 懒加载

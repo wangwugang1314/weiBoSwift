@@ -35,15 +35,18 @@ class YBHomeController: YBBaseTableViewController {
         // 通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "homePopDismissedControllerNotification", name: YBHomePopDismissedControllerNotification,
             object: nil)
+        
+        tableView.rowHeight = 100;
     }
     
     // MARK: - 加载微薄数据
     private func loadWeiBoData() {
+        
         YBWeiBoModel.loadWeiBoData { (dataArr, error) -> () in
             if error { // 数据加载出错
                 SVProgressHUD.showErrorWithStatus("数据加载出错")
             }else{// 数据加载成功
-                if dataArr != nil { // 有新数据
+                if dataArr?.count != 0 { // 有新数据
                     self.dataArr = dataArr
                 }else{ // 没有新数据
                     

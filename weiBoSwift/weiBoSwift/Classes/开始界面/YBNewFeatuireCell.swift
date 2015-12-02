@@ -77,3 +77,33 @@ class YBNewFeatuireCell: UICollectionViewCell {
     }()
     
 }
+
+
+func regularDemo() {
+    // 需要查找的字符串
+    let string = "<a href=\"http://weibo.com/\" rel=\"nofollow\">微博 weibo.com</a>fdfdfd<a href=\"http://weibo.com/\" rel=\"nofollow\">微博 weibo.com</a>fdfdfd"
+    
+    // 匹配规则
+    let pattern = ">(.*?)</a>"
+    
+    // 创建正则表达式
+    let regular = try! NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.DotMatchesLineSeparators)
+    
+    // 匹配
+    let result = regular.firstMatchInString(string, options: NSMatchingOptions(rawValue: 0), range: NSRange(location: 0, length: string.characters.count))
+    
+    // 匹配个数
+    let count = result?.numberOfRanges ?? 0
+    print("count:\(count)")
+    
+    // 遍历匹配个数
+    for i in 0..<count {
+        // 获取匹配的范围
+        let range = result!.rangeAtIndex(i)
+        print("range:\(range)")
+        
+        // 使用范围截取字符串
+        let text = (string as NSString).substringWithRange(range)
+        print("查找到的字符串: \(text)")
+    }
+}
