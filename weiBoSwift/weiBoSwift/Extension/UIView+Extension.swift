@@ -11,17 +11,17 @@ import UIKit
 extension UIView {
     
     /// 宽度
-    var width: CGFloat {
+    var viewWidth: CGFloat {
         return frame.size.width
     }
     
     /// 高度
-    var height: CGFloat {
+    var viewHeight: CGFloat {
         return frame.size.height
     }
     
     /// Y
-    var X: CGFloat {
+    var viewX: CGFloat {
         set(newValue){
             frame.origin.x = newValue
         }get{
@@ -30,7 +30,7 @@ extension UIView {
     }
     
     /// Y
-    var Y: CGFloat {
+    var viewY: CGFloat {
         set(newValue){
             frame.origin.y = newValue
         }get{
@@ -39,17 +39,17 @@ extension UIView {
     }
     
     /// centerX
-    var centerX: CGFloat {
+    var viewCenterX: CGFloat {
         return center.x
     }
     
     /// centerY
-    var centerY: CGFloat {
+    var viewCenterY: CGFloat {
         return center.y
     }
     
     /// size
-    var size: CGSize {
+    var viewSize: CGSize {
         return bounds.size
     }
     

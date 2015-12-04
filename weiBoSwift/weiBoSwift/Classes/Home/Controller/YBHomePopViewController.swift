@@ -31,7 +31,6 @@ class YBHomePopViewController: UIViewController {
         popTableViewC.view.ff_Fill(view, insets: UIEdgeInsets(top: 11, left: 5, bottom: 7, right: 5))
     }
     
-    
     // MARK: - 懒加载
     /// 背景图片
     private lazy var bgView: UIImageView = UIImageView(image: UIImage(named: "popover_background"))
@@ -42,4 +41,8 @@ class YBHomePopViewController: UIViewController {
         return popTableView;
     }()
 
+    /// 对象销毁
+    deinit {
+        print("popView销毁")
+    }
 }

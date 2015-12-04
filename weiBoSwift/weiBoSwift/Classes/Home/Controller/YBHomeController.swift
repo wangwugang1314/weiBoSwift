@@ -36,7 +36,7 @@ class YBHomeController: YBBaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "homePopDismissedControllerNotification", name: YBHomePopDismissedControllerNotification,
             object: nil)
         
-        tableView.rowHeight = 500;
+        tableView.estimatedRowHeight = 400
     }
     
     // MARK: - 加载微薄数据
@@ -99,6 +99,17 @@ class YBHomeController: YBBaseTableViewController {
             popVC.transitioningDelegate = self
             presentViewController(popVC, animated: true, completion: nil)
         }
+    }
+    
+    // MARK: - 行高
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let model = dataArr![indexPath.row]
+        return model.rowHeight ?? 700
+    }
+    
+    /// 点击行不显示高亮
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
     }
     
     // MARK: - 懒加载

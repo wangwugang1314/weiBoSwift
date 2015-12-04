@@ -47,7 +47,7 @@ class YBTabBarController: UITabBarController {
     /// 添加中间按钮
     private func addCenterBut(){
         // 创建按钮
-        let but = UIButton(frame: CGRect(x: UIScreen.width() * 0.4, y: 0, width: UIScreen.width() * 0.2 + 2, height: tabBar.height))
+        let but = UIButton(frame: CGRect(x: UIScreen.width() * 0.4, y: 0, width: UIScreen.width() * 0.2 + 2, height: tabBar.viewHeight))
         // 设置背景图片
         but.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
         but.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)

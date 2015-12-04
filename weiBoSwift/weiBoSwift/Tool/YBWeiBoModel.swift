@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class YBWeiBoModel: NSObject {
     
@@ -34,14 +35,26 @@ class YBWeiBoModel: NSObject {
         }
     }
     /// MARK: 转发微博
-    var retweeted_status: AnyObject?
+    var retweeted_status: AnyObject? {
+        didSet {
+            let weiBoModel = YBWeiBoModel(dic: retweeted_status as! [String: AnyObject])
+            retweeted_status = weiBoModel
+            pic_urls = weiBoModel.pic_urls
+        }
+    }
     /// MARK: 图片
-    var pic_urls: [[String: String]]?
+    @objc private var pic_urls: [[String: String]]? {
+        didSet {
+            for picDic in pic_urls! {
+                imageURLs.append(NSURL(string: picDic["thumbnail_pic"]!)!)
+            }
+        }
+    }
     // -----------------------------------------
     /// 当为一张图片的时候图片的大小
     var imageSize: CGSize = CGSizeMake(0, 0)
     /// MARK: 图片数组的Url
-    var pictureURLs = [NSURL]()
+    var imageURLs = [NSURL]()
     /// 大图的url
     var bigPictureUrls = [NSURL]()
     /// MARK: 行高
@@ -66,12 +79,49 @@ class YBWeiBoModel: NSObject {
                 for data in result! {
                     weiBoArr.append(YBWeiBoModel(dic: data))
                 }
-                finish(dataArr: weiBoArr, isError: false)
+                loadImages(weiBoArr, finish: finish)
             }else{  // 数据加载出错
                 finish(dataArr: nil, isError: true)
             }
         }
     }
+    
+    /// 加载所有单张图片
+    private class func loadImages(dataArr: [YBWeiBoModel], finish: (dataArr: [YBWeiBoModel]?, isError: Bool) -> ()){
+        // 设置GCD group
+        let group = dispatch_group_create()
+        // 遍历数组
+        for data in dataArr {
+            if data.imageURLs.count == 1 {
+                // 队列进组
+                dispatch_group_enter(group)
+                // 下载图片
+                SDWebImageManager.sharedManager().downloadImageWithURL(data.imageURLs[0], options: SDWebImageOptions(rawValue: 0), progress: { (_, _) -> Void in
+                    }, completed: {[unowned data] (image, error, _, _, _) -> Void in
+                        // 队列出租
+                        dispatch_group_leave(group)
+                        // 判断图片是否加载成功
+                        if error == nil && image != nil { // 加载到图片
+                            // 如果图片太窄就设置默认大小
+                            if image.size.width < 40 {
+                                data.imageSize = CGSizeMake(80, 90)
+                            }else if image.size.width > UIScreen.width() - 20 {
+                                data.imageSize = CGSizeMake(UIScreen.width() - 20, image.size.height * (UIScreen.width() / image.size.height))
+                            } else {
+                                data.imageSize = CGSizeMake(image.size.width, image.size.height)
+                            }
+                        }else{ // 加载错误
+                            data.imageSize = CGSizeMake(80, 90)
+                        }
+                })
+            }
+        }
+        // 组全部执行完执行
+        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
+            finish(dataArr: dataArr, isError: false)
+        }
+    }
+    
     //    刚刚(一分钟内)
     //    X分钟前(一小时内)
     //    X小时前(当天)

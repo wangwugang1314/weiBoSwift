@@ -42,7 +42,7 @@ class YBHomeNavTitleView: UIButton {
     // MARK: - 布局子试图
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel?.X = 0
-        imageView?.X = titleLabel!.width + 3
+        titleLabel?.viewX = 0
+        imageView?.viewX = titleLabel!.viewWidth + 3
     }
 }
