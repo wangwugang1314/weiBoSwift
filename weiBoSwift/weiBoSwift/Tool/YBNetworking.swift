@@ -27,7 +27,7 @@ class YBNetworking: NSObject {
     // MARK: - 加载微博数据
     func loadWeiBoData(finish: (result: [[String: AnyObject]]?, error: NSError?) -> ()) {
         let path = "/2/statuses/home_timeline.json"
-        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "count": "100"];
+        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "count": "30"];
         // 加载数据
         GET(path, parameters: dic) { (result, error) -> () in
             finish(result: result?["statuses"] as? [[String: AnyObject]], error: error)

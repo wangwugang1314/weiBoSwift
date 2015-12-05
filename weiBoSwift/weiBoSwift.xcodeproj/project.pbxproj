@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		041141CA1C11644B00F4591E /* YBHomeCellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141C91C11644B00F4591E /* YBHomeCellBottomView.swift */; };
+		041141D11C1180DD00F4591E /* YBHomePictureShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141D01C1180DD00F4591E /* YBHomePictureShowController.swift */; };
+		041141D51C11822C00F4591E /* YBHomePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141D41C11822C00F4591E /* YBHomePictureCell.swift */; };
+		041141FC1C11DEC400F4591E /* YBHomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141FB1C11DEC300F4591E /* YBHomeImageView.swift */; };
 		041512381C11300B00F0C803 /* YBHomeCellImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041512371C11300B00F0C803 /* YBHomeCellImageCollectionView.swift */; };
 		0415123A1C11355100F0C803 /* YBHomeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041512391C11355100F0C803 /* YBHomeImageCell.swift */; };
 		0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */; };
@@ -17,6 +20,7 @@
 		0455F38A1C0AF24C0062FA12 /* YBHomeNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3891C0AF24C0062FA12 /* YBHomeNavTitleView.swift */; };
 		0455F3EB1C0B53430062FA12 /* YBNavScanCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3E81C0B53430062FA12 /* YBNavScanCodeController.m */; };
 		0455F3EC1C0B53430062FA12 /* YBScanCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3EA1C0B53430062FA12 /* YBScanCode.m */; };
+		0472C7961C12893A00CCCB51 /* YBHomePicturePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472C7951C12893A00CCCB51 /* YBHomePicturePresentationController.swift */; };
 		0478A8501C08668C00513858 /* YBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A84F1C08668C00513858 /* YBLoginViewController.swift */; };
 		0478A8901C086CD500513858 /* YBUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A88F1C086CD500513858 /* YBUserModel.swift */; };
 		0478A8921C086CF800513858 /* YBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478A8911C086CF800513858 /* YBNetworking.swift */; };
@@ -78,6 +82,9 @@
 
 /* Begin PBXFileReference section */
 		041141C91C11644B00F4591E /* YBHomeCellBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeCellBottomView.swift; sourceTree = "<group>"; };
+		041141D01C1180DD00F4591E /* YBHomePictureShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePictureShowController.swift; sourceTree = "<group>"; };
+		041141D41C11822C00F4591E /* YBHomePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePictureCell.swift; sourceTree = "<group>"; };
+		041141FB1C11DEC300F4591E /* YBHomeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeImageView.swift; sourceTree = "<group>"; };
 		041512371C11300B00F0C803 /* YBHomeCellImageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeCellImageCollectionView.swift; sourceTree = "<group>"; };
 		041512391C11355100F0C803 /* YBHomeImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeImageCell.swift; sourceTree = "<group>"; };
 		0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNewFeatureViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +97,7 @@
 		0455F3E91C0B53430062FA12 /* YBScanCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBScanCode.h; sourceTree = "<group>"; };
 		0455F3EA1C0B53430062FA12 /* YBScanCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBScanCode.m; sourceTree = "<group>"; };
 		0455F3ED1C0B537E0062FA12 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
+		0472C7951C12893A00CCCB51 /* YBHomePicturePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePicturePresentationController.swift; sourceTree = "<group>"; };
 		0478A84F1C08668C00513858 /* YBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBLoginViewController.swift; sourceTree = "<group>"; };
 		0478A88F1C086CD500513858 /* YBUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBUserModel.swift; sourceTree = "<group>"; };
 		0478A8911C086CF800513858 /* YBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNetworking.swift; sourceTree = "<group>"; };
@@ -182,6 +190,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041141CC1C11802C00F4591E /* 图片轮播器 */ = {
+			isa = PBXGroup;
+			children = (
+				041141CF1C11807D00F4591E /* Controller */,
+				041141CE1C11807800F4591E /* Model */,
+				041141CD1C11803C00F4591E /* View */,
+			);
+			name = "图片轮播器";
+			sourceTree = "<group>";
+		};
+		041141CD1C11803C00F4591E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				041141D41C11822C00F4591E /* YBHomePictureCell.swift */,
+				041141FB1C11DEC300F4591E /* YBHomeImageView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		041141CE1C11807800F4591E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		041141CF1C11807D00F4591E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0472C7941C12891B00CCCB51 /* 动画 */,
+				041141D01C1180DD00F4591E /* YBHomePictureShowController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		0455F3811C0AC1090062FA12 /* 新版本 */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +242,14 @@
 				0455F3EA1C0B53430062FA12 /* YBScanCode.m */,
 			);
 			name = "二维码";
+			sourceTree = "<group>";
+		};
+		0472C7941C12891B00CCCB51 /* 动画 */ = {
+			isa = PBXGroup;
+			children = (
+				0472C7951C12893A00CCCB51 /* YBHomePicturePresentationController.swift */,
+			);
+			name = "动画";
 			sourceTree = "<group>";
 		};
 		0478A84E1C08666E00513858 /* 登录 */ = {
@@ -233,10 +284,10 @@
 		04A4AC081C060C3D004058CC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04A4AC0D1C060C3D004058CC /* Home */,
 				04D8DA161C0A06B10066452E /* 开始界面 */,
 				04A4AC241C060CD5004058CC /* Main */,
 				04A4AC091C060C3D004058CC /* Discover */,
-				04A4AC0D1C060C3D004058CC /* Home */,
 				04A4AC111C060C3D004058CC /* Me */,
 				04A4AC151C060C3D004058CC /* Message */,
 				04A4AC191C060C3D004058CC /* NewCharacter */,
@@ -280,6 +331,7 @@
 		04A4AC0D1C060C3D004058CC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				041141CC1C11802C00F4591E /* 图片轮播器 */,
 				04A4AC0E1C060C3D004058CC /* Controller */,
 				04A4AC0F1C060C3D004058CC /* Model */,
 				04A4AC101C060C3D004058CC /* View */,
@@ -880,6 +932,7 @@
 				041141CA1C11644B00F4591E /* YBHomeCellBottomView.swift in Sources */,
 				0455F3851C0ACBA80062FA12 /* UIView+Extension.swift in Sources */,
 				0415123A1C11355100F0C803 /* YBHomeImageCell.swift in Sources */,
+				041141FC1C11DEC400F4591E /* YBHomeImageView.swift in Sources */,
 				04D2484E1C06A60D007AF5E0 /* YBDiscoverController.swift in Sources */,
 				0455F37C1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift in Sources */,
 				04D8DA181C0A06CB0066452E /* YBWelcomeViewController.swift in Sources */,
@@ -907,9 +960,12 @@
 				04B4CBBF1C0D7C24008E9701 /* YBWeiBoModel.swift in Sources */,
 				0455F3831C0AC1220062FA12 /* YBIsNewVersion.swift in Sources */,
 				04F6F8591C0EC208000A04D2 /* YBHomeCellCenterView.swift in Sources */,
+				0472C7961C12893A00CCCB51 /* YBHomePicturePresentationController.swift in Sources */,
+				041141D11C1180DD00F4591E /* YBHomePictureShowController.swift in Sources */,
 				04D248C51C06CC97007AF5E0 /* UIView+AutoLayout.swift in Sources */,
 				0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */,
 				04A4AC301C060FBE004058CC /* UIColor+Extension.swift in Sources */,
+				041141D51C11822C00F4591E /* YBHomePictureCell.swift in Sources */,
 				04B4CBBD1C0D4065008E9701 /* YBHomePopTableView.swift in Sources */,
 				04DF42F41C08AD3F008748B1 /* YBDefaultData.swift in Sources */,
 				0455F38A1C0AF24C0062FA12 /* YBHomeNavTitleView.swift in Sources */,

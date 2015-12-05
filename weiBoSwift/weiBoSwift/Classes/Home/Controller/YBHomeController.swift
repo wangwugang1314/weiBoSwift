@@ -35,7 +35,7 @@ class YBHomeController: YBBaseTableViewController {
         // 通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "homePopDismissedControllerNotification", name: YBHomePopDismissedControllerNotification,
             object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "homeCellImageClickNotification:", name: YBHomeCellImageClickNotification, object: nil)
         tableView.estimatedRowHeight = 400
     }
     
@@ -59,6 +59,14 @@ class YBHomeController: YBBaseTableViewController {
     // MARK: - 通知
     @objc private func homePopDismissedControllerNotification(){
         titleViewClick(titleView)
+    }
+    
+    @objc private func homeCellImageClickNotification(notification: NSNotification){
+        // 图片轮播器控制器
+        let vc = YBHomePictureShowController(model: notification.userInfo!["dataModel"] as! YBWeiBoModel)
+        // 设置弹出样式（后面的控制器不会消失）
+        vc.modalPresentationStyle = .Custom
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     // MARK: - 准备UI

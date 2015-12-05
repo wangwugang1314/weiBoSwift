@@ -47,6 +47,9 @@ class YBWeiBoModel: NSObject {
         didSet {
             for picDic in pic_urls! {
                 imageURLs.append(NSURL(string: picDic["thumbnail_pic"]!)!)
+                // 设置大图的url
+                // 获取图片地址
+                bigPictureUrls.append(NSURL(string: picDic["thumbnail_pic"]!.stringByReplacingOccurrencesOfString("thumbnail", withString: "large"))!)
             }
         }
     }
@@ -59,6 +62,10 @@ class YBWeiBoModel: NSObject {
     var bigPictureUrls = [NSURL]()
     /// MARK: 行高
     var rowHeight: CGFloat?
+    /// 当前点击的图片索引
+    var index: Int = 0;
+    /// 当前点击所有的位置
+    var imageViewFrames: [CGRect]?
     
     // MARK: - 构造方法
     init(dic: [String: AnyObject]) {
@@ -162,7 +169,11 @@ class YBWeiBoModel: NSObject {
         if str == "" {return ""}
         let regularExpression = try? NSRegularExpression(pattern: ">(.*?)</a>", options: NSRegularExpressionOptions(rawValue: 0))
         if regularExpression == nil {return ""}
-        let result = regularExpression?.firstMatchInString(str, options: NSMatchingOptions(rawValue: 0), range: NSRange(location: 0, length: str.characters.count))!
+        
+        let result = regularExpression?.firstMatchInString(str, options: NSMatchingOptions(rawValue: 0), range: NSRange(location: 0, length: str.characters.count))
+        
+        if result == nil {return ""}
+        
         if result!.numberOfRanges > 0 {
             return (str as NSString).substringWithRange(result!.rangeAtIndex(1))
         }

@@ -8,9 +8,12 @@
 
 import UIKit
 
+/// 点击图片通知
+let YBHomeCellImageClickNotification = "YBHomeCellImageClickNotification"
+
 class YBHomeCellImageCollectionView: UICollectionView {
     
-    // MASK: - 属性
+    // MARK: - 属性
     /// 布局方式
     private let layout = UICollectionViewFlowLayout()
     /// 数据
@@ -22,7 +25,7 @@ class YBHomeCellImageCollectionView: UICollectionView {
         }
     }
     
-    // MASK: -构造方法
+    // MARK: -构造方法
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: self.layout)
         self.delegate = self;
@@ -36,7 +39,7 @@ class YBHomeCellImageCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MASK: - 准备UI
+    // MARK: - 准备UI
     /// 准备UI
     private func prepareUI(){
         // 设置间隔
@@ -71,13 +74,13 @@ class YBHomeCellImageCollectionView: UICollectionView {
         }
     }
     
-    // MASK: - 懒加载
+    // MARK: - 懒加载
 }
 
 /// 代理、扩展
 extension YBHomeCellImageCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    // MASK: - 数据源方法
+    // MARK: - 数据源方法
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataModel?.imageURLs.count ?? 0
     }
@@ -89,5 +92,22 @@ extension YBHomeCellImageCollectionView: UICollectionViewDataSource, UICollectio
         
         return cell
     }
-    // MASK: - 代理
+    
+    // MA
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        dataModel!.index = indexPath.item
+        /// 获取所有的frame
+        var frames = [CGRect]()
+        let count = dataModel!.imageURLs.count
+        for i in 0..<count {
+            
+            let cell = cellForItemAtIndexPath(NSIndexPath(forItem: i, inSection: 0))
+
+            frames.append(cell!.superview!.convertRect((cell?.frame)!, toCoordinateSpace: UIApplication.sharedApplication().keyWindow!))
+        }
+        
+        dataModel?.imageViewFrames = frames
+        // 发送通知
+        NSNotificationCenter.defaultCenter().postNotificationName(YBHomeCellImageClickNotification, object: nil, userInfo: ["dataModel" : dataModel!])
+    }
 }
