@@ -119,7 +119,7 @@ class YBHomePictureShowController: UICollectionViewController {
 }
 
 /// 扩展、代理
-extension YBHomePictureShowController: UIViewControllerTransitioningDelegate {
+extension YBHomePictureShowController: UIViewControllerTransitioningDelegate, YBHomePictureCellDelegate {
     
     // MARK: - 数据源方法
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -128,6 +128,7 @@ extension YBHomePictureShowController: UIViewControllerTransitioningDelegate {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("YBHomePictureCell", forIndexPath: indexPath) as! YBHomePictureCell
+        cell.ybDelegate = self
         cell.imageUrl = dateModel.bigPictureUrls[indexPath.item]
         return cell
     }
@@ -152,6 +153,12 @@ extension YBHomePictureShowController: UIViewControllerTransitioningDelegate {
     /// 转场动画
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return YBHomePicturePresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+    
+    // MARK: - cell代理
+    /// 控制器消失代理
+    func dismisspWithPictureCell(cell: YBHomePictureCell) {
+        breakViewClick()
     }
 }
 

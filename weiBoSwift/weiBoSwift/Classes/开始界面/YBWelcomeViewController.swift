@@ -43,7 +43,7 @@ class YBWelcomeViewController: UIViewController {
     // MARK: - 动画
     private func iconAnimation(){
         constent?.constant = -view.viewHeight * 0.8
-        UIView.animateWithDuration(0.1, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+        UIView.animateWithDuration(2, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 4, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
                 self.view.layoutIfNeeded()
             }) { (_) -> Void in
                 UIView.animateWithDuration(0.1, animations: { () -> Void in

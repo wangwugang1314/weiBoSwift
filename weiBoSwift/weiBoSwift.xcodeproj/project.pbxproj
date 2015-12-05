@@ -10,7 +10,6 @@
 		041141CA1C11644B00F4591E /* YBHomeCellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141C91C11644B00F4591E /* YBHomeCellBottomView.swift */; };
 		041141D11C1180DD00F4591E /* YBHomePictureShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141D01C1180DD00F4591E /* YBHomePictureShowController.swift */; };
 		041141D51C11822C00F4591E /* YBHomePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141D41C11822C00F4591E /* YBHomePictureCell.swift */; };
-		041141FC1C11DEC400F4591E /* YBHomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041141FB1C11DEC300F4591E /* YBHomeImageView.swift */; };
 		041512381C11300B00F0C803 /* YBHomeCellImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041512371C11300B00F0C803 /* YBHomeCellImageCollectionView.swift */; };
 		0415123A1C11355100F0C803 /* YBHomeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041512391C11355100F0C803 /* YBHomeImageCell.swift */; };
 		0455F37A1C0AA3C70062FA12 /* YBNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */; };
@@ -84,7 +83,6 @@
 		041141C91C11644B00F4591E /* YBHomeCellBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeCellBottomView.swift; sourceTree = "<group>"; };
 		041141D01C1180DD00F4591E /* YBHomePictureShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePictureShowController.swift; sourceTree = "<group>"; };
 		041141D41C11822C00F4591E /* YBHomePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomePictureCell.swift; sourceTree = "<group>"; };
-		041141FB1C11DEC300F4591E /* YBHomeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeImageView.swift; sourceTree = "<group>"; };
 		041512371C11300B00F0C803 /* YBHomeCellImageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeCellImageCollectionView.swift; sourceTree = "<group>"; };
 		041512391C11355100F0C803 /* YBHomeImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBHomeImageCell.swift; sourceTree = "<group>"; };
 		0455F3791C0AA3C70062FA12 /* YBNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBNewFeatureViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				041141D41C11822C00F4591E /* YBHomePictureCell.swift */,
-				041141FB1C11DEC300F4591E /* YBHomeImageView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -932,7 +929,6 @@
 				041141CA1C11644B00F4591E /* YBHomeCellBottomView.swift in Sources */,
 				0455F3851C0ACBA80062FA12 /* UIView+Extension.swift in Sources */,
 				0415123A1C11355100F0C803 /* YBHomeImageCell.swift in Sources */,
-				041141FC1C11DEC400F4591E /* YBHomeImageView.swift in Sources */,
 				04D2484E1C06A60D007AF5E0 /* YBDiscoverController.swift in Sources */,
 				0455F37C1C0AA3EC0062FA12 /* YBNewFeatuireCell.swift in Sources */,
 				04D8DA181C0A06CB0066452E /* YBWelcomeViewController.swift in Sources */,

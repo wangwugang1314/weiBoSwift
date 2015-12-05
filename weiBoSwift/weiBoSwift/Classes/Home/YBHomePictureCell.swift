@@ -10,6 +10,13 @@ import UIKit
 import SDWebImage
 import SVProgressHUD
 
+
+protocol YBHomePictureCellDelegate: NSObjectProtocol {
+    
+    /// 通知控制器管理图片查看器
+    func dismisspWithPictureCell(cell: YBHomePictureCell)
+}
+
 // 最小缩放比例
 let YBHomeImageScrollViewMinScale: CGFloat = 0.4
 
@@ -36,6 +43,9 @@ class YBHomePictureCell: UICollectionViewCell {
             }
         }
     }
+    
+    /// 代理
+    weak var ybDelegate: YBHomePictureCellDelegate?
     
     // MARK: - 构造函数
     override init(frame: CGRect) {
@@ -70,10 +80,12 @@ class YBHomePictureCell: UICollectionViewCell {
     }()
     
     /// imageView
-    lazy var pictureView: YBHomeImageView = {
-        let view = YBHomeImageView()
+    lazy var pictureView: UIImageView = {
+        let view = UIImageView()
         return view
     }()
+    
+    
     
     
 }
@@ -85,8 +97,12 @@ extension YBHomePictureCell: UIScrollViewDelegate {
         return pictureView;
     }
     
-    /// 缩放完成调用
-    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
+    func scrollViewDidZoom(scrollView: UIScrollView) {
+        // 如果缩放比例小于3就自动回去
+        if scrollView.zoomScale < 0.3 {
+            ybDelegate?.dismisspWithPictureCell(self)
+            return
+        }
         // 圆点
         var top = (scrollView.bounds.height - pictureView.viewHeight) * 0.5
         var left = (scrollView.bounds.width - pictureView.viewWidth) * 0.5
@@ -95,10 +111,8 @@ extension YBHomePictureCell: UIScrollViewDelegate {
         if left < 0 {left = 0}
         
         UIView.animateWithDuration(0.25) { () -> Void in
-            scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: 0, right: 0)
+            scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
         }
     }
     
-    func scrollViewDidZoom(scrollView: UIScrollView) {
-    }
 }
