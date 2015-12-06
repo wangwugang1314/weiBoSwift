@@ -18,7 +18,7 @@ protocol YBHomePictureCellDelegate: NSObjectProtocol {
 }
 
 // 最小缩放比例
-let YBHomeImageScrollViewMinScale: CGFloat = 0.4
+let YBHomeImageScrollViewMinScale: CGFloat = 0.6
 
 class YBHomePictureCell: UICollectionViewCell {
 
@@ -31,15 +31,14 @@ class YBHomePictureCell: UICollectionViewCell {
             scrollView.contentSize = CGSizeZero
             pictureView.hidden = true
             // 加载图片
-            SDWebImageManager.sharedManager().downloadImageWithURL(imageUrl, options: SDWebImageOptions(rawValue: 0), progress: { (receivedSize, expectedSize) -> Void in
-                }) { [unowned self] (image, error, _, _, _) -> Void in
-                    self.pictureView.image = image
-                    SVProgressHUD.dismiss()
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.pictureView.frame = CGRectMake(0, 0, UIScreen.width(), image.size.height * (UIScreen.width() / image.size.width))
-                        self.scrollView.contentInset = UIEdgeInsets(top: (self.scrollView.viewHeight - self.pictureView.viewHeight) * 0.5, left: 0, bottom: 0, right: 0)
-                        self.pictureView.hidden = false
-                    })
+            pictureView.sd_setImageWithURL(imageUrl) { [unowned self] (image, error, _, _) -> Void in
+                self.pictureView.image = image
+                SVProgressHUD.dismiss()
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.pictureView.frame = CGRectMake(0, 0, UIScreen.width(), image.size.height * (UIScreen.width() / image.size.width))
+                    self.scrollView.contentInset = UIEdgeInsets(top: (self.scrollView.viewHeight - self.pictureView.viewHeight) * 0.5, left: 0, bottom: 0, right: 0)
+                    self.pictureView.hidden = false
+                })
             }
         }
     }
@@ -98,9 +97,16 @@ extension YBHomePictureCell: UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
+        
         // 如果缩放比例小于3就自动回去
-        if scrollView.zoomScale < 0.3 {
+        if scrollView.zoomScale <= 0.6 {
+            // 缓冲试图
+            
             ybDelegate?.dismisspWithPictureCell(self)
+            let imageFrame = pictureView.convertRect(pictureView.frame, toView: UIApplication.sharedApplication().keyWindow)
+            print(pictureView.frame)
+            print(pictureView.bounds)
+            print("-- \(imageFrame)")
             return
         }
         // 圆点

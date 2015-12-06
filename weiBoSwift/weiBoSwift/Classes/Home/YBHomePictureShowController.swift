@@ -227,15 +227,17 @@ class YBHomeImageDismissAnimatedTransitioning:NSObject, UIViewControllerAnimated
         cell.pictureView.hidden = true
         // 获取图片的frame
         let imageFrame = cell.pictureView.convertRect(cell.pictureView.frame, toView: UIApplication.sharedApplication().keyWindow)
+        
         // 模型
         let dataModel = formVC.dateModel
         // 设置 imageView
         imageView.sd_setImageWithURL(dataModel.bigPictureUrls[dataModel.index], placeholderImage: UIImage(named: "sys_qq_1"))
+        // 设置frame
         
-        imageView.frame = imageFrame
+        imageView.frame = CGRect(x: imageFrame.origin.x, y: imageFrame.origin.y, width: cell.pictureView.frame.size.width, height: cell.pictureView.frame.size.height)
         
         transitionContext.containerView()?.addSubview(imageView)
-        
+        transitionContext.containerView()?.layoutIfNeeded()
         // 动画
         UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
             // 隐藏view

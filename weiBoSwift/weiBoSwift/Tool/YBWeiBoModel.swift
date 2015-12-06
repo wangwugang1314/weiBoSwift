@@ -13,7 +13,8 @@ class YBWeiBoModel: NSObject {
     
     // MARK: - 属性
     // 微薄id
-    var id = 0
+    var Id = 0
+    
     /// MARK: 微博创建时间
     var created_at: String? {
         didSet{
@@ -76,9 +77,10 @@ class YBWeiBoModel: NSObject {
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
     
     // MARK: - 微薄数据加载
-    class func loadWeiBoData(finish: (dataArr: [YBWeiBoModel]?, isError: Bool) -> ()){
+    class func loadWeiBoData(newData: Int, max_id: Int,finish: (dataArr: [YBWeiBoModel]?, isError: Bool) -> ()){
         // 加载数据
-        YBNetworking.sharedInstance.loadWeiBoData { (result, error) -> () in
+        YBNetworking.sharedInstance.loadWeiBoData(newData, max_id: max_id) { (result, error) -> () in
+
             // 判断是否有错误
             if error == nil {   // 加载成功
                 var weiBoArr = [YBWeiBoModel]()

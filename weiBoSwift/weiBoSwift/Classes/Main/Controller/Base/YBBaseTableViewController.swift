@@ -13,7 +13,6 @@ class YBBaseTableViewController: UITableViewController {
     // MARK: - 属性
     /// 是否已经登录
     private var isVisit = YBUserModel.userModel()?.isLogin ?? false
-    
     /// loadView
     override func loadView() {
         isVisit ? super.loadView() : visitView()
@@ -29,7 +28,7 @@ class YBBaseTableViewController: UITableViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "registerButClick")
         }else{
             // 设置颜色
-            view.backgroundColor = UIColor.randomColor()
+            view.backgroundColor = UIColor.whiteColor()
         }
     }
     

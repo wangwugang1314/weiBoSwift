@@ -18,24 +18,24 @@ class YBNetworking: NSObject {
     /// 单利
     static let sharedInstance = YBNetworking()
     /// AppKey
-    static let client_id = "2811696621"
+    static let client_id = "4261273397"
     /// App Secret
-    static let client_secret = "283af988db3ec9bbb6fbb8cd41ec9d7c"
+    static let client_secret = "dc7e5074eccc1314683566033e684729"
     /// 回调地址
     static let redirect_uri = "https://www.baidu.com/"
     
     // MARK: - 加载微博数据
-    func loadWeiBoData(finish: (result: [[String: AnyObject]]?, error: NSError?) -> ()) {
+    func loadWeiBoData(newData: Int ,max_id:Int ,finish: (result: [[String: AnyObject]]?, error: NSError?) -> ()) {
         let path = "/2/statuses/home_timeline.json"
-        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "count": "30"];
+        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "since_id": newData, "max_id": max_id];
         // 加载数据
-        GET(path, parameters: dic) { (result, error) -> () in
+        GET(path, parameters: dic as? [String : AnyObject]) { (result, error) -> () in
             finish(result: result?["statuses"] as? [[String: AnyObject]], error: error)
         }
     }
     
     // MARK: - 加载用户信息
-    /// 加载用户登录信息 https://api.weibo.com/oauth2/access_token
+    /// 加载用户登录信息
     func loadUserLoginData(code: String, finish: YBNetworkingFinish) {
         let path = "/oauth2/access_token"
         let dic = ["client_id": YBNetworking.client_id,
@@ -49,7 +49,7 @@ class YBNetworking: NSObject {
         }
     }
     
-    /// 加载用户信息 https://api.weibo.com/2/users/show.json
+    /// 加载用户信息
     func loadUserData(finish: YBNetworkingFinish){
         let path = "/2/users/show.json"
         let dic = ["access_token": YBUserModel.userModel()!.access_token!, "uid": YBUserModel.userModel()!.uid!]

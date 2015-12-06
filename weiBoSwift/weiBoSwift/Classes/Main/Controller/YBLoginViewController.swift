@@ -56,7 +56,7 @@ class YBLoginViewController: UIViewController {
     
     /// 导航栏右边按钮点击
     @objc private func rightBarButtonItemClick(){
-        let js = "document.getElementById('userId').value='15107780400';" + "document.getElementById('passwd').value='w123456';"
+        let js = "document.getElementById('userId').value='18567680596';" + "document.getElementById('passwd').value='www123456';"
         
         // webView执行js代码
         webView.stringByEvaluatingJavaScriptFromString(js)
