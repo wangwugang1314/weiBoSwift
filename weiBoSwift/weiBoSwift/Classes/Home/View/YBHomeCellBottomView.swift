@@ -17,7 +17,7 @@ class YBHomeCellBottomView: UIView {
         // 准备UI
         prepareUI()
         
-        backgroundColor = UIColor.purpleColor()
+        backgroundColor = UIColor.lightGrayColor()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,7 +30,7 @@ class YBHomeCellBottomView: UIView {
         addSubview(commentView)
         addSubview(unlikeView)
         
-        self.ff_HorizontalTile([retweetView, commentView, unlikeView], insets: UIEdgeInsets(top: 1, left: 1, bottom: -2, right: 1))
+        self.ff_HorizontalTile([retweetView, commentView, unlikeView], insets: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1))
     }
     
     // MARK: - 懒加载
@@ -40,7 +40,7 @@ class YBHomeCellBottomView: UIView {
         but.setImage(UIImage(named: "timeline_icon_unlike"), forState: UIControlState.Normal)
         but.setTitle("转发", forState: UIControlState.Normal)
         but.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-        but.setBackgroundImage(UIImage(named: "timeline_card_bottom_line_highlighted"), forState: UIControlState.Normal)
+        but.backgroundColor = UIColor.whiteColor()
         return but
     }()
     
@@ -50,7 +50,7 @@ class YBHomeCellBottomView: UIView {
         but.setImage(UIImage(named: "timeline_icon_comment"), forState: UIControlState.Normal)
         but.setTitle("评论", forState: UIControlState.Normal)
         but.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-        but.setBackgroundImage(UIImage(named: "timeline_card_bottom_line_highlighted"), forState: UIControlState.Normal)
+        but.backgroundColor = UIColor.whiteColor()
         return but
     }()
     
@@ -60,7 +60,7 @@ class YBHomeCellBottomView: UIView {
         but.setImage(UIImage(named: "timeline_icon_unlike"), forState: UIControlState.Normal)
         but.setTitle("赞", forState: UIControlState.Normal)
         but.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-        but.setBackgroundImage(UIImage(named: "timeline_card_bottom_line_highlighted"), forState: UIControlState.Normal)
+        but.backgroundColor = UIColor.whiteColor()
         return but
     }()
 }

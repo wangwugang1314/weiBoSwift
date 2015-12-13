@@ -8,6 +8,13 @@
 
 import UIKit
 
+// 代理弹出webView
+protocol YBHomeTableViewCellDelegate: NSObjectProtocol {
+
+    // 代理弹出webView
+    func homeTableViewCell(cell: YBHomeTableViewCell, pathStr: String)
+}
+
 class YBHomeTableViewCell: UITableViewCell {
 
     // MARK: - 属性
@@ -17,6 +24,10 @@ class YBHomeTableViewCell: UITableViewCell {
             topView.data = data
             // 微薄文字内容
             textView.text = data?.text
+            
+//            let pattern = ""
+//            let regularExpression = try? NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions(rawValue: 0))
+            
             // 中间视图
             centerView.dataModel = data
             // 判断是都是转发微薄还有图片
@@ -37,6 +48,9 @@ class YBHomeTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    /// 代理
+    var ybDelegate: YBHomeTableViewCellDelegate?
     
     /// 底部试图约束
     private var conBottom: NSLayoutConstraint?
@@ -81,11 +95,12 @@ class YBHomeTableViewCell: UITableViewCell {
     private lazy var topView: YBHomeCellTopView = YBHomeCellTopView()
     
     /// 微薄内容
-    private lazy var textView: UILabel = {
-        let view = UILabel()
+    private lazy var textView: FFLabel = {
+        let view = FFLabel()
         view.textColor = UIColor.blackColor()
         view.numberOfLines = 0
-        view.backgroundColor = UIColor.grayColor()
+        // 设置代理
+        view.labelDelegate = self
         return view
     }()
     
@@ -101,4 +116,14 @@ class YBHomeTableViewCell: UITableViewCell {
         let view = YBHomeCellBottomView()
         return view
     }()
+}
+
+extension YBHomeTableViewCell: FFLabelDelegate {
+    // 点击调用
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        // 如果前缀是网址就弹出web
+        if text.hasPrefix("http") {
+            ybDelegate?.homeTableViewCell(self, pathStr: text)
+        }
+    }
 }

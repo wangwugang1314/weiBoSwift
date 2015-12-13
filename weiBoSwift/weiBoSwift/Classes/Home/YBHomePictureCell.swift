@@ -38,6 +38,12 @@ class YBHomePictureCell: UICollectionViewCell {
                     self.pictureView.frame = CGRectMake(0, 0, UIScreen.width(), image.size.height * (UIScreen.width() / image.size.width))
                     self.scrollView.contentInset = UIEdgeInsets(top: (self.scrollView.viewHeight - self.pictureView.viewHeight) * 0.5, left: 0, bottom: 0, right: 0)
                     self.pictureView.hidden = false
+                    // 如果图片太大滚动到最上面
+                    if self.pictureView.viewHeight > UIScreen.height() {
+                        self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+                        self.scrollViewDidZoom(self.scrollView)
+                        self.scrollView.contentSize = self.pictureView.viewSize
+                    }
                 })
             }
         }
@@ -71,7 +77,6 @@ class YBHomePictureCell: UICollectionViewCell {
     /// scrollView
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.backgroundColor = UIColor.orangeColor()
         view.minimumZoomScale = YBHomeImageScrollViewMinScale
         view.maximumZoomScale = 2
         view.delegate = self;
@@ -97,16 +102,10 @@ extension YBHomePictureCell: UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(scrollView: UIScrollView) {
-        
         // 如果缩放比例小于3就自动回去
         if scrollView.zoomScale <= 0.6 {
             // 缓冲试图
-            
             ybDelegate?.dismisspWithPictureCell(self)
-            let imageFrame = pictureView.convertRect(pictureView.frame, toView: UIApplication.sharedApplication().keyWindow)
-            print(pictureView.frame)
-            print(pictureView.bounds)
-            print("-- \(imageFrame)")
             return
         }
         // 圆点

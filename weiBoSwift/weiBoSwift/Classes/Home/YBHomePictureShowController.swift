@@ -36,6 +36,9 @@ class YBHomePictureShowController: UICollectionViewController {
         setLayout()
         // 准备UI
         prepareUI()
+        
+        
+        
     }
     
     /// 滚动
@@ -43,7 +46,6 @@ class YBHomePictureShowController: UICollectionViewController {
         super.viewDidAppear(animated)
         // 滚动到指定位置
         collectionView?.selectItemAtIndexPath(NSIndexPath(forItem: dateModel.index, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.Left)
-        print(collectionView?.visibleCells().last)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -95,6 +97,7 @@ class YBHomePictureShowController: UICollectionViewController {
     /// 页码
     private lazy var pageView: UILabel = {
         let view = UILabel()
+        view.textColor = UIColor.orangeColor()
         view.textAlignment = NSTextAlignment.Center
         return view
     }()
@@ -103,7 +106,7 @@ class YBHomePictureShowController: UICollectionViewController {
     private lazy var breakView: UIButton = {
         let but = UIButton()
         but.setTitle("返回", forState: UIControlState.Normal)
-        but.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        but.backgroundColor = UIColor.orangeColor()
         but.addTarget(self, action: "breakViewClick", forControlEvents: UIControlEvents.TouchUpInside)
         return but
     }()
@@ -112,7 +115,7 @@ class YBHomePictureShowController: UICollectionViewController {
     private lazy var saveImageView: UIButton = {
         let but = UIButton()
         but.setTitle("保存", forState: UIControlState.Normal)
-        but.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        but.backgroundColor = UIColor.orangeColor()
         but.addTarget(self, action: "saveImageViewClick", forControlEvents: UIControlEvents.TouchUpInside)
         return but
     }()
@@ -186,17 +189,18 @@ class YBHomeImagePresentedAnimatedTransitioning:NSObject, UIViewControllerAnimat
         imageView.frame = dataModel.imageViewFrames![dataModel.index]
         
         transitionContext.containerView()?.addSubview(imageView)
-        transitionContext.containerView()?.backgroundColor = UIColor(white: 0, alpha: 0.3)
+        transitionContext.containerView()?.sendSubviewToBack(imageView)
+        transitionContext.containerView()?.backgroundColor = UIColor(white: 0, alpha: 0);
         // 图片位置
         let imageWid = UIScreen.width()
         let imageHei = UIScreen.width() * (imageView.image!.size.height / imageView.image!.size.width)
         let imageY = (UIScreen.height() - imageHei) * 0.5
         // 动画
         UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
+            transitionContext.containerView()?.backgroundColor = UIColor(white: 0, alpha: 1);
             self.imageView.frame = CGRect(x: 0, y: imageY, width: imageWid, height: imageHei)
-            }) {[unowned self] (_) -> Void in
+            }) { (_) -> Void in
                 toView?.alpha = 1
-                self.imageView.removeFromSuperview()
                 transitionContext.completeTransition(true)
         }
     }
@@ -204,7 +208,6 @@ class YBHomeImagePresentedAnimatedTransitioning:NSObject, UIViewControllerAnimat
     /// 懒加载
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = UIColor.orangeColor()
         view.contentMode = UIViewContentMode.ScaleAspectFill
         view.clipsToBounds = true
         return view
@@ -219,6 +222,12 @@ class YBHomeImageDismissAnimatedTransitioning:NSObject, UIViewControllerAnimated
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        // 移除图片试图
+        for view in transitionContext.containerView()!.subviews {
+            if view is UIImageView {
+                view.removeFromSuperview()
+            }
+        }
         // 获取展现后的view
         let formView = transitionContext.viewForKey(UITransitionContextFromViewKey)
         // 获取展现后的控制器
@@ -240,6 +249,7 @@ class YBHomeImageDismissAnimatedTransitioning:NSObject, UIViewControllerAnimated
         transitionContext.containerView()?.layoutIfNeeded()
         // 动画
         UIView.animateWithDuration(0.5, animations: {[unowned self] () -> Void in
+            transitionContext.containerView()?.backgroundColor = UIColor(white: 0, alpha: 0)
             // 隐藏view
             formView?.alpha = 0
             self.imageView.frame = formVC.dateModel.imageViewFrames![dataModel.index]
@@ -252,7 +262,6 @@ class YBHomeImageDismissAnimatedTransitioning:NSObject, UIViewControllerAnimated
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = UIViewContentMode.ScaleAspectFill
-        view.backgroundColor = UIColor.orangeColor()
         view.clipsToBounds = true
         return view
     }()

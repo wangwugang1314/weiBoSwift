@@ -59,12 +59,7 @@ class YBTabBarController: UITabBarController {
         but.addTarget(self, action: "centerButClick", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
-    /// 中间按钮点击事件
-    @objc private func centerButClick(){
-        print("中间按钮点击")
-    }
-    
-    /// 根据指定的名称图片穿件控制器
+    /// 根据指定的名称图片创建控制器
     private func creatController(controller: UIViewController, title: String?, imageName: String?) {
 
         // 创建导航控制器
@@ -78,6 +73,12 @@ class YBTabBarController: UITabBarController {
         }
         // 添加到tabBar控制器
         addChildViewController(navC)
+    }
+    
+    // MARK: - 按钮点击事件
+    @objc private func centerButClick(){
+        let nav = UINavigationController(rootViewController: YBSendViewController())
+        presentViewController(nav, animated: true, completion: nil)
     }
     
     // 对象销毁

@@ -34,8 +34,6 @@ class YBHomeCellTopView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.purpleColor()
-        
         // 准备UI
         prepareUI()
     }

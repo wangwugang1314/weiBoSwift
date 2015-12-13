@@ -61,13 +61,11 @@ class YBVisitView: UIView {
     @objc private func didEnterBackgroundNotification(){
         // 移除动画
         centerImageView.layer.removeAllAnimations()
-        print("移除动画")
     }
     
     /// 将要进入前台通知
     @objc private func willEnterForegroundNotification(){
         startAnmit()
-        print("开始动画")
     }
     
     // 准备UI

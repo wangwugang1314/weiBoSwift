@@ -21,11 +21,11 @@ class YBHomeCellCenterView: UIView {
                 // 设置textView
                 textView.text = ret.text
                 constraintTop?.constant = 5
-                backgroundColor = UIColor.grayColor()
+                backgroundColor = UIColor(white: 0, alpha: 0.1)
             }else{ // 原创微薄
                 textView.text = ""
                 constraintTop?.constant = 0
-                backgroundColor = UIColor.orangeColor()
+                backgroundColor = UIColor.whiteColor()
             }
             let collSize = collectionView.countCollectionSize()
             // 设置collectionView大小

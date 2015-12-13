@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.bounds())
         // 界面跳转
         viewSwitch()
+//        window?.rootViewController = UINavigationController(rootViewController: YBSendViewController())
         // 显示
         window?.makeKeyAndVisible()
         // 设置window背景
@@ -70,7 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setGlobalProperty(){
         // 设置UIBarButtonItem
         let barButtonItem = UIBarButtonItem.appearance()
-        barButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orangeColor()], forState: UIControlState.Normal)
         // 设置barBut颜色
         barButtonItem.tintColor = UIColor.orangeColor()
     }

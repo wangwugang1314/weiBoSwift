@@ -18,13 +18,41 @@ class YBNetworking: NSObject {
     /// 单利
     static let sharedInstance = YBNetworking()
     /// AppKey
-    static let client_id = "4261273397"
+    static let client_id = "2811696621"
     /// App Secret
-    static let client_secret = "dc7e5074eccc1314683566033e684729"
+    static let client_secret = "283af988db3ec9bbb6fbb8cd41ec9d7c"
     /// 回调地址
     static let redirect_uri = "https://www.baidu.com/"
     
-    // MARK: - 加载微博数据
+    
+    // MARK: - 发微博
+    /// 发微博（带图片）
+    func sendWeiBo(text: String, image: UIImage, finish: (isSeccess: Bool) -> ()){
+        let path = "https://upload.api.weibo.com/2/statuses/upload.json"
+        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "status": text]
+        POST(path, image: image, parameters: dic) { (result, error) -> () in
+            if error != nil {
+                finish(isSeccess: false)
+            }else{
+                finish(isSeccess: true)
+            }
+        }
+    }
+    
+    /// 发微博（不带图片）
+    func sendWeiBo(text: String, finish: (isSeccess: Bool) -> ()){
+        let path = "/2/statuses/update.json"
+        let dic = ["access_token": YBUserModel.userModel()!.access_token!, "status": text]
+        POST(path, parameters: dic) { (result, error) -> () in
+            if error != nil {
+                finish(isSeccess: false)
+            }else{
+                finish(isSeccess: true)
+            }
+        }
+    }
+    
+    /// MARK: - 加载微博数据
     func loadWeiBoData(newData: Int ,max_id:Int ,finish: (result: [[String: AnyObject]]?, error: NSError?) -> ()) {
         let path = "/2/statuses/home_timeline.json"
         let dic = ["access_token": YBUserModel.userModel()!.access_token!, "since_id": newData, "max_id": max_id];
@@ -34,7 +62,6 @@ class YBNetworking: NSObject {
         }
     }
     
-    // MARK: - 加载用户信息
     /// 加载用户登录信息
     func loadUserLoginData(code: String, finish: YBNetworkingFinish) {
         let path = "/oauth2/access_token"
@@ -61,6 +88,21 @@ class YBNetworking: NSObject {
     }
     
     // MARK: - 封装网络请求
+    /// 封装POST（带图片）
+    private func POST(URLString: String, image: UIImage, parameters: [String: AnyObject]?, finish: YBNetworkingFinish) {
+        // POST请求
+        netManager.POST(URLString, parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
+            let data = UIImagePNGRepresentation(image)!
+            formData.appendPartWithFileData(data, name: "pic", fileName: "sb", mimeType: "image/png")
+            }, success: { (_, data) -> Void in
+                // 成功调用
+                finish(result: data as? [String : AnyObject], error: nil)
+            }) { (_, error) -> Void in
+                // 失败调用
+                finish(result: nil, error: error)
+        }
+    }
+    
     /// 封装POST
     private func POST(URLString: String, parameters: [String: AnyObject]?, finish: YBNetworkingFinish) {
         // POST请求
