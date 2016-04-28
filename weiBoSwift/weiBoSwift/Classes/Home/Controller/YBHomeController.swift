@@ -43,9 +43,9 @@ class YBHomeController: YBBaseTableViewController {
         // 准备UI
         prepareUI()
         // 通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "homePopDismissedControllerNotification", name: YBHomePopDismissedControllerNotification,
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(YBHomeController.homePopDismissedControllerNotification), name: YBHomePopDismissedControllerNotification,
             object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "homeCellImageClickNotification:", name: YBHomeCellImageClickNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(YBHomeController.homeCellImageClickNotification(_:)), name: YBHomeCellImageClickNotification, object: nil)
         tableView.estimatedRowHeight = 400
         // 加载用户数据
         loadWeiBoData(YBHomeLoadDataStyle.new)

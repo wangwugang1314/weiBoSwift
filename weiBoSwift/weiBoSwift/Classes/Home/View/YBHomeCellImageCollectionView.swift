@@ -33,6 +33,8 @@ class YBHomeCellImageCollectionView: UICollectionView {
         registerClass(YBHomeImageCell.self, forCellWithReuseIdentifier: "YBHomeImageCell")
         // 准备UI
         prepareUI()
+        
+        backgroundColor = UIColor.whiteColor()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -73,7 +75,6 @@ class YBHomeCellImageCollectionView: UICollectionView {
         default : return CGSizeZero
         }
     }
-    
     // MARK: - 懒加载
 }
 
