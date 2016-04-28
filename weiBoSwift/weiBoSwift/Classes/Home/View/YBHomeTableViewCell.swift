@@ -22,11 +22,9 @@ class YBHomeTableViewCell: UITableViewCell {
         didSet{
             // 顶部
             topView.data = data
-            // 微薄文字内容
-            textView.text = data?.text
             
-//            let pattern = ""
-//            let regularExpression = try? NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions(rawValue: 0))
+            // ---------将文字转为表情----------------------------------
+            textView.attributedText = data!.attText;
             
             // 中间视图
             centerView.dataModel = data

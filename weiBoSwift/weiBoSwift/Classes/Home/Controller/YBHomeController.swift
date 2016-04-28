@@ -150,9 +150,9 @@ class YBHomeController: YBBaseTableViewController {
     /// 设置导航栏
     private func setNavigationBar(){
         // 左边
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationbar_friendsearch"), style: UIBarButtonItemStyle.Plain, target: self, action: "leftBarButtonItemClick")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationbar_friendsearch"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(YBHomeController.leftBarButtonItemClick))
         // 右边
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationbar_pop"), style: UIBarButtonItemStyle.Plain, target: self, action: "rightBarButtonItemClick")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationbar_pop"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(YBHomeController.rightBarButtonItemClick))
         // 中间
         navigationItem.titleView = titleView
     }
@@ -197,7 +197,7 @@ class YBHomeController: YBBaseTableViewController {
     private lazy var titleView: YBHomeNavTitleView = {
         let titleView = YBHomeNavTitleView()
         // 添加点击事件
-        titleView.addTarget(self, action: "titleViewClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        titleView.addTarget(self, action: #selector(YBHomeController.titleViewClick(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         return titleView
     }()
     

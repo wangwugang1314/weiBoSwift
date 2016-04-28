@@ -128,6 +128,10 @@ extension YBEmotionKeyboardView: YBEmotionGroupViewDelegate, YBEmotionViewDelega
     
     /// 点击调用
     func emotionView(emotionView: YBEmotionView, emotionModel: YBEmotionModel) {
+        // 如果是空直接返回
+        if emotionModel.png == nil && emotionModel.code == nil && emotionModel.deleteStr == nil {
+            return
+        }
         ybDelegate?.emotionKeyboardView(self, emotionModel: emotionModel)
     }
 }

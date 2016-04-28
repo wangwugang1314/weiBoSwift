@@ -57,7 +57,7 @@ class YBSendImageViewCell: UICollectionViewCell {
     
     // MARK: - 按钮点击方法
     @objc private func delButClick(){
-        ybDelegate?.clickDelButWithSendImageViewCell(self)
+        ybDelegate?.clickDelButWithSendImageViewCell(self)                               
     }
     
     // MARK: - 懒加载

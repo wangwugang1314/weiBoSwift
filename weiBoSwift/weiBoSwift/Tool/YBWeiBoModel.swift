@@ -22,8 +22,46 @@ class YBWeiBoModel: NSObject {
         }
     }
     /// MARK: 微博信息内容
-    var text: String?
-    /// MARK: 微博来源
+    var text: String? {
+        didSet{
+            let pattern = "\\[.*?\\]"
+            let regularExpression = try? NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions(rawValue: 0))
+            let textCheckingResults = regularExpression?.matchesInString(text!, options: NSMatchingOptions.ReportCompletion, range: NSRange(location: 0, length: text!.characters.count))
+            let attStr = NSMutableAttributedString(string: text!)
+            // 表情数组
+            let emotionGroups = YBEmotionGroupModel.emotionGroupModels()
+            
+            for var i = (textCheckingResults!.count ?? 0) - 1; i >= 0; i -= 1 {
+                
+                // 替换指定位置字符 串
+                let range = textCheckingResults![i].rangeAtIndex(0)
+                attStr.replaceCharactersInRange(range, withString: "")
+                
+                let subText = (text! as NSString).substringWithRange(textCheckingResults![i].rangeAtIndex(0))
+                
+                // 遍历表情模型组
+                for emotionGroup in emotionGroups! {
+                    // 遍历表情模型
+                    for emotion in emotionGroup.emotions! {
+                        if subText == emotion.chs {
+                            // 替换数据
+                            let textAttachment = NSTextAttachment()
+                            textAttachment.image = UIImage(contentsOfFile: emotion.png!)
+                            textAttachment.bounds = CGRect(x: 0, y: -3, width: 18, height: 18)
+                            let atts = NSAttributedString(attachment: textAttachment)
+                            attStr.insertAttributedString(atts, atIndex: range.location)
+                        }
+                    }
+                }
+            }
+            attStr.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(18), range: NSRange(location: 0, length: attStr.length))
+            attText = attStr;
+        }
+    }
+    // MARK: - attText
+    var attText: NSAttributedString?
+    
+    // MARK: 微博来源
     var source: String? {
         didSet {
             source = weiBoSourceSwitch(source ?? "")
